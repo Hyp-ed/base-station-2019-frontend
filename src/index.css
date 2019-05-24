@@ -1,12 +1,12 @@
-/* Override bootstrap progress bar color */
-.progress-bar {
-    background-color: #36588c; 
-}
-
 body {
     background-color: #0F1D3A;
 }
 
 h1, h2 {
     color: #ffffff;
+}
+
+/* Override bootstrap progress bar color */
+.progress-bar {
+    background-color: #a30606; 
 }
