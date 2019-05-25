@@ -12,9 +12,9 @@ function Gauge(props) {
     }
 
     const insetStyle = {
-        width: `${props.size * .8}px`,
-        height: `${props.size * .8}px`,
-        margin: `${(props.size - (props.size * .8)) / 2}px`,
+        width: `${props.size * .75}px`,
+        height: `${props.size * .75}px`,
+        margin: `${(props.size - (props.size * .75)) / 2}px`,
     };
 
     return (
