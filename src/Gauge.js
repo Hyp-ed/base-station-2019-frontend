@@ -1,5 +1,6 @@
-import React from 'react';
 import './Gauge.css';
+
+import React from 'react';
 
 function Gauge(props) {
     const rotate = {
