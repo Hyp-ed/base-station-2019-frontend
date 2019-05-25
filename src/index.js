@@ -10,10 +10,10 @@ function App(props) {
     return (
         <div className="wrapper">
             <Header /> 
-            <h1>Base-station GUI</h1>
             <Gauge
-                rotate='190'
-                size = '200'
+                rotate='100'
+                size='200'
+                title='ACCELERATION'
             />
         </div>
     );
