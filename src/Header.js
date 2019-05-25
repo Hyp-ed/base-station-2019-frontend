@@ -9,8 +9,10 @@ function Header(props) {
     return (
         <div className="header">
             <img id="logo" src={logo} alt="HypED logo"/>
-            <ProgressBar id="pod_progress" now={podProgress} label={`${podProgress} m`} />
-            <Button id="pod_status" variant="primary">STATUS</Button>
+            <ProgressBar id="pod_progress" animated now={podProgress} label={`${podProgress} m`} />
+            <div id="pod_status">
+                <p id="pod_status_text">STATUS</p>
+            </div>
         </div>
     );
 }
