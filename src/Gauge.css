@@ -2,6 +2,7 @@
     background-color: #0f1d3a;
     border-radius: 50%;
     position: relative;
+    transform: rotate(180deg);
 }
 
 .clip {
@@ -20,6 +21,11 @@
 
 .clip .circle {
     clip-path: inset(0 50% 0 0);
+}
+
+.circle.seam {
+    position: absolute;
+    top: 0px;
 }
 
 .inset {

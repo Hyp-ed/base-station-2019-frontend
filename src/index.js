@@ -12,7 +12,7 @@ function App(props) {
             <Header /> 
             <h1>Base-station GUI</h1>
             <Gauge
-                rotate={200 / 2}
+                rotate='190'
                 size = '200'
             />
         </div>

@@ -3,7 +3,7 @@ import './Gauge.css';
 
 function Gauge(props) {
     const rotate = {
-        transform: `rotate(${props.rotate}deg)`,
+        transform: `rotate(${props.rotate / 2}deg)`,
     };
 
     const size = {
@@ -21,6 +21,8 @@ function Gauge(props) {
         <div className="gauge" style={size}>
             <div className="clip half">
                 <div className="circle" style={{...rotate, ...size}}>
+                </div>
+                <div className="circle seam" style={{transform: `rotate(${props.rotate}deg)`, ...size}}> {/* rotate twice as fast */}
                 </div>
             </div>
             <div className="clip full" style={{...rotate, ...size}}>
