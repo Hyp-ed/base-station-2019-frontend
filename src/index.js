@@ -10,11 +10,20 @@ function App(props) {
     return (
         <div className="wrapper">
             <Header /> 
-            <Gauge
-                rotate='100'
-                size='200'
-                title='ACCELERATION'
-            />
+            <div id="gauges">
+                <div id="velocity_gauge">
+                    <Gauge
+                        rotate='100'
+                        size='150'
+                        title='VELOCITY'
+                    />
+                </div>
+                <Gauge
+                    rotate='60'
+                    size='100'
+                    title='ACCELERATION'
+                />
+            </div>
         </div>
     );
 }

@@ -8,7 +8,7 @@ h1, h2 {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 400px auto;
+    grid-template-columns: 450px auto;
     grid-template-rows: 120px auto;
     padding-right: 15px;
     padding-left: 15px;
@@ -47,6 +47,16 @@ h1, h2 {
 /* Override bootstrap progress bar color */
 .progress-bar {
     background-color: #a30606; 
+}
+
+#gauges {
+    display: flex;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+#velocity_gauge {
+    margin-right: 70px;
 }
 
 #logo {
