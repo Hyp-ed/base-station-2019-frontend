@@ -9,6 +9,11 @@
     background-color: #374259;
     border-radius: 50%;
     position: relative;
+    transition: all .2s ease;
+}
+
+.gauge:hover {
+    transform: scale(1.1);
 }
 
 .clip {
@@ -48,6 +53,6 @@
     transition: all .2s ease;
 }
 
-.inset:hover {
-    transform: scale(1.1);
+.gauge:hover .inset {
+    transform: scale(1.15);
 }
