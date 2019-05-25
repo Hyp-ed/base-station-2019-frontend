@@ -1,0 +1,37 @@
+.gauge {
+    width: 100px;
+    height: 100px;
+    background-color: #0f1d3a;
+    border-radius: 50%;
+    position: relative;
+}
+
+.clip {
+    clip-path: inset(0 0 0 50%);
+}
+
+.clip.full {
+    position: absolute;
+    top: 0px;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #ff0000;
+    border-radius: 50%;
+}
+
+.clip .circle {
+    clip-path: inset(0 50% 0 0);
+}
+
+.inset {
+    width: 90px;
+    height: 90px;
+    background: #0f1d3a;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    margin: 5px;
+}
