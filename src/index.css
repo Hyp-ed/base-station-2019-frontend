@@ -6,7 +6,58 @@ h1, h2 {
     color: #ffffff;
 }
 
+.wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 100px auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* width breakpoint for wrapper class */
+@media (min-width: 768px) {
+    .wrapper {
+        max-width: 720px;
+    }
+}
+
+/* width breakpoint for wrapper class */
+@media (min-width: 992px) {
+    .wrapper {
+        max-width: 960px;
+    }
+}
+
+/* width breakpoint for wrapper class */
+@media (min-width: 1200px) {
+    .wrapper {
+        max-width: 1140px;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
 /* Override bootstrap progress bar color */
 .progress-bar {
     background-color: #a30606; 
+}
+
+#logo {
+    width: 25%;
+}
+
+#pod_progress {
+    flex-grow: 1; /* allow progress bar to grow and fill space */
+    margin: 0px 40px 0px;
+}
+
+#pod_status {
+    float: right;
 }
