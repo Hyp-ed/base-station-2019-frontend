@@ -21,7 +21,7 @@ function Gauge(props) {
     return (
         <div className="gauge-root">
             <p className="gauge-title">{props.title}</p>
-            <div className="gauge" style={size}>
+            <div className="gauge-background" style={size}>
                 <div className="clip danger-zone" style={size}>
                     <div className="circle danger-zone" style={size}></div>
                 </div>

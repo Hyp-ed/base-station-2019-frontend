@@ -5,14 +5,14 @@
     color: #ffffff;
 }
 
-.gauge {
+.gauge-background {
     background-color: #374259;
     border-radius: 50%;
     position: relative;
     transition: all .2s ease;
 }
 
-.gauge:hover {
+.gauge-background:hover {
     transform: scale(1.1);
 }
 
@@ -53,6 +53,6 @@
     transition: all .2s ease;
 }
 
-.gauge:hover .inset {
+.gauge-background:hover .inset {
     transform: scale(1.15);
 }
