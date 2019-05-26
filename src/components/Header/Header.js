@@ -2,7 +2,7 @@ import './Header.css';
 
 import React from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import logo from './hyped.png';
+import logo from '../../hyped.png';
 
 function Header(props) {
     const podProgress = 90;

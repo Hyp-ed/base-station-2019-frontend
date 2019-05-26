@@ -3,8 +3,8 @@ import './index.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './Header';
-import Gauge from './Gauge';
+import Header from './components/Header/Header';
+import Gauge from './components/Gauge/Gauge';
 
 function App(props) {
     return (
