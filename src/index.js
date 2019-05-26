@@ -4,7 +4,6 @@ import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header/Header';
-import Gauge from './components/GaugeContainer/Gauge/Gauge';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 
 function App(props) {
