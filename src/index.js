@@ -4,7 +4,8 @@ import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header/Header';
-import Gauge from './components/Gauge/Gauge';
+import Gauge from './components/GaugeContainer/Gauge/Gauge';
+import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 
 function App(props) {
     return (
@@ -38,8 +39,23 @@ function App(props) {
                     title='RIGHT MOTOR RPM'
                 />
             </div>
+            <GaugeContainer
+                title='VELOCITY'
+                gauges={gauges}
+            />
         </div>
     );
 }
+
+const gauges = [{
+                    rotate: '100',
+                    size: '100',
+                    gaugeTitle: 'REALLY REALLY LONG NAME',
+                },
+                {
+                    rotate: '100',
+                    size: '60',
+                    gaugeTitle: 'TEST 2',
+                }];
 
 ReactDOM.render(<App />, document.getElementById('root'));

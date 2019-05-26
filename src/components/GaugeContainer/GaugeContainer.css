@@ -1,0 +1,21 @@
+.gauge-container-title {
+    font-size: 20px;
+    font-family: 'Lato';
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.gauge-container-flex {
+    display: flex
+}
+
+/* spacing between gauges */
+.gauge-container-flex-item {
+    margin-right: 40px;
+}
+
+/* so that last gauge doesn't have unnecessary padding */
+.gauge-container-flex-item:last-child {
+    margin-right: 0px;
+}
