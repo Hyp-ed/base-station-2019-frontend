@@ -14,13 +14,13 @@ function App(props) {
                 <div id="velocity_gauge">
                     <Gauge
                         rotate='100'
-                        size='180'
+                        size='150'
                         title='VELOCITY'
                     />
                 </div>
                 <Gauge
                     rotate='60'
-                    size='120'
+                    size='90'
                     title='ACCELERATION'
                 />
             </div>

@@ -11,8 +11,9 @@ function Header(props) {
         <div className="header">
             <img id="logo" src={logo} alt="HypED logo"/>
             <ProgressBar id="pod_progress" animated now={podProgress} label={`${podProgress} m`} />
-            <div id="pod_status">
-                <p id="pod_status_text">STATUS</p>
+            <div class="pod_status">
+                <p class="status_text connection_text">CONNECTED</p>
+                <p class="status_text pod_status_text">IDLE</p>
             </div>
         </div>
     );
