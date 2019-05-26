@@ -12,50 +12,48 @@ function App(props) {
         <div className="wrapper">
             <Header /> 
             <div id="gauges-1">
-                <div id="velocity_gauge">
-                    <Gauge
-                        rotate='100'
-                        size='150'
+                <div id="velocity-gauge">
+                    <GaugeContainer
                         title='VELOCITY'
+                        gauges={velocityGauges}
                     />
                 </div>
-                <Gauge
-                    rotate='60'
-                    size='90'
+                <GaugeContainer
                     title='ACCELERATION'
+                    gauges={accelerationGauges}
                 />
             </div>
             <div id="gauges-2">
-                <div id="motor_left_gauge">
-                    <Gauge
-                        rotate='100'
-                        size='80'
-                        title='LEFT MOTOR RPM'
-                    />
-                </div>
-                <Gauge
-                    rotate='60'
-                    size='80'
-                    title='RIGHT MOTOR RPM'
+                <GaugeContainer
+                    title='MOTORS'
+                    gauges={motorGauges}
                 />
             </div>
-            <GaugeContainer
-                title='VELOCITY'
-                gauges={gauges}
-            />
         </div>
     );
 }
 
-const gauges = [{
-                    rotate: '100',
-                    size: '100',
-                    gaugeTitle: 'REALLY REALLY LONG NAME',
-                },
-                {
-                    rotate: '100',
-                    size: '60',
-                    gaugeTitle: 'TEST 2',
-                }];
+const velocityGauges = [{
+                        rotate: '100',
+                        size: '160',
+                        gaugeTitle: '',
+                    }];
+
+const accelerationGauges = [{
+                            rotate: '60',
+                            size: '100',
+                            gaugeTitle: '',
+                        }];
+
+const motorGauges = [{
+                        rotate: '100',
+                        size: '90',
+                        gaugeTitle: 'RPM REAR LEFT',
+                    },
+                    {
+                        rotate: '100',
+                        size: '90',
+                        gaugeTitle: 'RPM REAR RIGHT',
+                    }];
 
 ReactDOM.render(<App />, document.getElementById('root'));

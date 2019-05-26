@@ -42,15 +42,14 @@ h1, h2 {
     grid-row: 2 / 3;
 }
 
-#velocity_gauge {
-    margin-right: 70px;
+#velocity-gauge {
+    margin-right: 40px;
 }
 
 #gauges-2 {
-    display: flex;
     grid-column: 1 / 2;
     grid-row: 3 / 4;
-    margin-top: 60px;
+    margin-top: 45px;
 }
 
 /* lato-300 - latin */
