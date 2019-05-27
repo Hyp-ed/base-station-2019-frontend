@@ -6,10 +6,7 @@
 }
 
 .bar-name {
-    width: 155px;
-}
-
-.bar-name p {
+    width: 145px;
     font-size: 16px;
     font-family: 'Lato';
     font-weight: 300;
@@ -35,7 +32,7 @@
     background: #D30935;
 }
 
-.bar-value p {
+.bar-value {
     font-size: 16px;
     font-family: 'Lato';
     font-weight: 300;

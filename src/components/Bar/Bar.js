@@ -5,16 +5,12 @@ import React from 'react';
 function Bar(props) {
     return (
         <div className="bar-root">
-            <div className="bar-name">
-                <p>CURRENT</p>
-            </div>
+            <p className="bar-name">CURRENT</p>
             <div>
                 <div className="bar background"></div>
                 <div className="bar fill"></div>
             </div>
-            <div className="bar-value">
-                <p>56 V</p>
-            </div>
+            <p className="bar-value">56 V</p>
         </div>
     );
 }
