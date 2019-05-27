@@ -29,7 +29,10 @@ function App(props) {
                     gauges={motorGauges}
                 />
             </div>
-            <Bar />
+            <Bar
+                name='TEMPERATURE'
+                unit='&deg;C'
+            />
         </div>
     );
 }
