@@ -29,33 +29,47 @@ function App(props) {
                     gauges={motorGauges}
                 />
             </div>
-            <BarContainer
-                title='HP BATTERY 1'
-                bars={hpBattery1Bars}
-            />
+            <div id="battery-flexbox">
+                <BarContainer
+                    title='HP BATTERY 1'
+                    bars={barTemplate}
+                />
+                <BarContainer
+                    title='HP BATTERY 2'
+                    bars={barTemplate}
+                />
+                <BarContainer
+                    title='LP BATTERY 1'
+                    bars={barTemplate}
+                />
+                <BarContainer
+                    title='LP BATTERY 2'
+                    bars={barTemplate}
+                />
+            </div>
         </div>
     );
 }
 
-const hpBattery1Bars = [{
+const barTemplate = [{
                     title: 'BATTERY',
                     unit: '%',
-                    value: '87',
+                    value: '87',  // actual value will be passed as prop later I guess?
                 },
                 {
                     title: 'VOLTAGE',
                     unit: 'V',
-                    value: '56',
+                    value: '56',  // actual value will be passed as prop later I guess?
                 },
                 {
                     title: 'TEMPERATURE',
                     unit: '\u00b0',
-                    value: '45',
+                    value: '45',  // actual value will be passed as prop later I guess?
                 },
                 {
                     title: 'CURRENT',
                     unit: 'A',
-                    value: '89',
+                    value: '89',  // actual value will be passed as prop later I guess?
                 }];
 
 const velocityGauges = [{
