@@ -1,0 +1,46 @@
+.bar-root {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 23px; /* so that flexbox is same height as bar, not height of grid square */
+}
+
+.bar-name {
+    width: 155px;
+}
+
+.bar-name p {
+    font-size: 16px;
+    font-family: 'Lato';
+    font-weight: 300;
+    color: grey;
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+.bar {
+    height: 23px;
+}
+
+.bar.background {
+    width: 180px;
+    background: #3B414B;
+}
+
+.bar.fill {
+    position: absolute;
+    top: 0px;
+    width: 150px;
+    background: #D30935;
+}
+
+.bar-value p {
+    font-size: 16px;
+    font-family: 'Lato';
+    font-weight: 300;
+    color: white;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}

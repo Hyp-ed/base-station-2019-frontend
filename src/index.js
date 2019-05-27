@@ -5,6 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header/Header';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
+import Bar from './components/Bar/Bar';
 
 function App(props) {
     return (
@@ -28,6 +29,7 @@ function App(props) {
                     gauges={motorGauges}
                 />
             </div>
+            <Bar />
         </div>
     );
 }
