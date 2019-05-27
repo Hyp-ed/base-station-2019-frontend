@@ -1,7 +1,7 @@
 import './GaugeContainer.css';
 
 import React from 'react';
-import Gauge from '../Gauge/Gauge'
+import Gauge from '../Gauge/Gauge';
 
 function GaugeContainer(props) {
     const gauges = Array.from(props.gauges, gauge => <div className="gauge-container-flex-item">
@@ -15,7 +15,7 @@ function GaugeContainer(props) {
 
     return (
         <div className="gauge-container">
-            <p className="gauge-container-title">{props.title}</p>
+            <h1 className="gauge-container-title">{props.title}</h1>
             <div className="gauge-container-flex">
                 {gauges}
             </div>
