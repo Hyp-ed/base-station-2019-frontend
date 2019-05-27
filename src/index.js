@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header/Header';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
-import Bar from './components/Bar/Bar';
+import BarContainer from './components/BarContainer/BarContainer';
 
 function App(props) {
     return (
@@ -29,13 +29,34 @@ function App(props) {
                     gauges={motorGauges}
                 />
             </div>
-            <Bar
-                name='TEMPERATURE'
-                unit='&deg;C'
+            <BarContainer
+                title='HP BATTERY 1'
+                bars={hpBattery1Bars}
             />
         </div>
     );
 }
+
+const hpBattery1Bars = [{
+                    title: 'BATTERY',
+                    unit: '%',
+                    value: '87',
+                },
+                {
+                    title: 'VOLTAGE',
+                    unit: 'V',
+                    value: '56',
+                },
+                {
+                    title: 'TEMPERATURE',
+                    unit: '\u00b0',
+                    value: '45',
+                },
+                {
+                    title: 'CURRENT',
+                    unit: 'A',
+                    value: '89',
+                }];
 
 const velocityGauges = [{
                         rotate: '100',
