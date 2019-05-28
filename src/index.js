@@ -9,8 +9,9 @@ import BarContainer from './components/BarContainer/BarContainer';
 
 class App extends React.Component {
     componentDidMount() {
+        // ask backend to start base-station server instance
         fetch('http://localhost:8080/server', {method: 'POST'})
-            .then(response => response.text(), error => {console.log('Error: could not fetch'); throw Promise.reject('Could not fetch');})
+            .then(response => response.text(), error => Promise.reject('Error: could not communicate with backend (fetch() returned error)'))
             .then(text => console.log(`CONNECTED TO BACKEND, SERVER CONNECTED TO POD CLIENT: ${text}`))
             .then(() => console.log("Would do SockJS stuff here"))
             .catch(error => console.log(error));
