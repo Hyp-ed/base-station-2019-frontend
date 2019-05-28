@@ -7,48 +7,58 @@ import Header from './components/Header/Header';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 import BarContainer from './components/BarContainer/BarContainer';
 
-function App(props) {
-    return (
-        <div className="wrapper">
-            <Header /> 
-            <div id="gauges-1">
-                <div id="velocity-gauge">
+class App extends React.Component {
+    componentDidMount() {
+        fetch('http://localhost:8080/server', {method: 'POST'})
+            .then(response => response.text(), error => {console.log('Error: could not fetch'); throw Promise.reject('Could not fetch');})
+            .then(text => console.log(`CONNECTED TO BACKEND, SERVER CONNECTED TO POD CLIENT: ${text}`))
+            .then(() => console.log("Would do SockJS stuff here"))
+            .catch(error => console.log(error));
+    }
+
+    render() {
+        return (
+            <div className="wrapper">
+                <Header />
+                <div id="gauges-1">
+                    <div id="velocity-gauge">
+                        <GaugeContainer
+                            title='VELOCITY'
+                            gauges={velocityGauges}
+                        />
+                    </div>
                     <GaugeContainer
-                        title='VELOCITY'
-                        gauges={velocityGauges}
+                        title='ACCELERATION'
+                        gauges={accelerationGauges}
                     />
                 </div>
-                <GaugeContainer
-                    title='ACCELERATION'
-                    gauges={accelerationGauges}
-                />
+                <div id="gauges-2">
+                    <GaugeContainer
+                        title='MOTORS'
+                        gauges={motorGauges}
+                    />
+                </div>
+                <div id="battery-flexbox">
+                    <BarContainer
+                        title='HP BATTERY 1'
+                        bars={barTemplate}
+                    />
+                    <BarContainer
+                        title='HP BATTERY 2'
+                        bars={barTemplate}
+                    />
+                    <BarContainer
+                        title='LP BATTERY 1'
+                        bars={barTemplate}
+                    />
+                    <BarContainer
+                        title='LP BATTERY 2'
+                        bars={barTemplate}
+                    />
+                </div>
             </div>
-            <div id="gauges-2">
-                <GaugeContainer
-                    title='MOTORS'
-                    gauges={motorGauges}
-                />
-            </div>
-            <div id="battery-flexbox">
-                <BarContainer
-                    title='HP BATTERY 1'
-                    bars={barTemplate}
-                />
-                <BarContainer
-                    title='HP BATTERY 2'
-                    bars={barTemplate}
-                />
-                <BarContainer
-                    title='LP BATTERY 1'
-                    bars={barTemplate}
-                />
-                <BarContainer
-                    title='LP BATTERY 2'
-                    bars={barTemplate}
-                />
-            </div>
-        </div>
-    );
+        );
+    }
 }
 
 const barTemplate = [{
