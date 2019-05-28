@@ -3,6 +3,7 @@ import './index.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Stomp from 'stompjs';
 import Header from './components/Header/Header';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 import BarContainer from './components/BarContainer/BarContainer';
@@ -10,10 +11,16 @@ import BarContainer from './components/BarContainer/BarContainer';
 class App extends React.Component {
     componentDidMount() {
         // ask backend to start base-station server instance
+        // afterwards establish websocket connection to backend
         fetch('http://localhost:8080/server', {method: 'POST'})
             .then(response => response.text(), error => Promise.reject('Error: could not communicate with backend (fetch() returned error)'))
             .then(text => console.log(`CONNECTED TO BACKEND, SERVER CONNECTED TO POD CLIENT: ${text}`))
-            .then(() => console.log("Would do SockJS stuff here"))
+            .then(() => {
+                            const stompClient = Stomp.client('ws://localhost:8080/connecthere');
+                            stompClient.connect({}, function(frame) {
+                                console.log(`Connected: ${frame}`);
+                            });
+                        })
             .catch(error => console.log(error));
     }
 
