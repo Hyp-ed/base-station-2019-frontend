@@ -10,12 +10,14 @@ function Header(props) {
     // literally just for the hypen in the classname...
     const connectionTextClassName = props.connectedToPod ? 'connected' : 'not-connected';
 
+    const connectionTextStyle = props.connectedToPod ? {marginBottom: -5} : {};
+
     return (
         <div className="header">
             <img id="logo" src={logo} alt="HypED logo"/>
             <ProgressBar id="pod-progress" animated now={podProgress} label={props.podDistance} />
             <div className="pod-status">
-                <p className={`status-text connection-text ${connectionTextClassName}`}>
+                <p className={`status-text connection-text ${connectionTextClassName}`} style={connectionTextStyle}>
                     {connectedToPod}
                 </p>
                 <p className="status-text pod-status-text">{props.podState}</p>
