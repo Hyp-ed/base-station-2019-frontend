@@ -7,6 +7,7 @@ import Stomp from 'stompjs';
 import Header from './components/Header/Header';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 import BarContainer from './components/BarContainer/BarContainer';
+import Button from './components/Button/Button';
 
 class App extends React.Component {
     constructor(props) {
@@ -90,6 +91,9 @@ class App extends React.Component {
                         bars={barTemplate}
                     />
                 </div>
+                <Button
+                    name='LAUNCH'
+                />
             </div>
         );
     }
