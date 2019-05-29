@@ -47,7 +47,9 @@ class App extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                <Header />
+                <Header
+                    connectedToPod={this.state.connectedToPod}
+                />
                 <div id="gauges-1">
                     <div id="velocity-gauge">
                         <GaugeContainer

@@ -11,27 +11,34 @@
     background-color: #a30606;
 }
 
-.pod_status {
+.pod-status {
     display: flex;
     flex-direction: column;
     float: right;
     width: 170px;
 }
 
-.status_text {
+.status-text {
     margin: 0px;
     text-align: right;
     font-family: 'Lato';
     font-weight: 300;
 }
 
-.connection_text {
+.connection-text {
     font-size: 19px;
-    color: #0D9513;
     margin-bottom: -5px;
 }
 
-.pod_status_text {
+.connection-text.connected {
+    color: #0D9513;
+}
+
+.connection-text.not-connected {
+    color: #a30606;
+}
+
+.pod-status-text {
     font-size: 14px;
     color: #ffffff;
 }
@@ -40,7 +47,7 @@
     width: 20%;
 }
 
-#pod_progress {
+#pod-progress {
     flex-grow: 1; /* allow progress bar to grow and fill space */
     margin: 0px 40px 0px;
 }
