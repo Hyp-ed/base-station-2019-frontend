@@ -9,6 +9,16 @@ import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 import BarContainer from './components/BarContainer/BarContainer';
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            connectedToPod: false,
+        };
+
+        this.podStatsHandler = this.podStatsHandler.bind(this);
+        this.isPodConnectedHandler = this.isPodConnectedHandler.bind(this);
+    }
+
     componentDidMount() {
         // ask backend to start base-station server instance
         // afterwards establish websocket connection to backend
@@ -16,12 +26,22 @@ class App extends React.Component {
             .then(response => response.text(), error => Promise.reject('Error: could not communicate with backend (fetch() returned error)'))
             .then(text => console.log(`CONNECTED TO BACKEND, SERVER CONNECTED TO POD CLIENT: ${text}`))
             .then(() => {
-                            const stompClient = Stomp.client('ws://localhost:8080/connecthere');
-                            stompClient.connect({}, function(frame) {
-                                console.log(`Connected: ${frame}`);
-                            });
-                        })
+                const stompClient = Stomp.client('ws://localhost:8080/connecthere');
+                stompClient.connect({}, (frame) => {
+                    stompClient.subscribe('/topic/podStats', (message) => this.podStatsHandler(message));
+                    stompClient.subscribe('/topic/isPodConnected', (message) => this.isPodConnectedHandler(message));
+                    stompClient.send("/app/pullData");
+                })
+            })
             .catch(error => console.log(error));
+    }
+
+    podStatsHandler(message) {
+        console.log("Received pod stats");
+    }
+
+    isPodConnectedHandler(message) {
+        this.setState({connectedToPod: true});
     }
 
     render() {
