@@ -16,7 +16,6 @@ class App extends React.Component {
         };
 
         this.podStatsHandler = this.podStatsHandler.bind(this);
-        this.isPodConnectedHandler = this.isPodConnectedHandler.bind(this);
     }
 
     componentDidMount() {
@@ -29,7 +28,7 @@ class App extends React.Component {
                 const stompClient = Stomp.client('ws://localhost:8080/connecthere');
                 stompClient.connect({}, (frame) => {
                     stompClient.subscribe('/topic/podStats', (message) => this.podStatsHandler(message));
-                    stompClient.subscribe('/topic/isPodConnected', (message) => this.isPodConnectedHandler(message));
+                    stompClient.subscribe('/topic/isPodConnected', (message) => this.setState({connectedToPod: true}));
                     stompClient.send("/app/pullData");
                 })
             })
@@ -38,10 +37,6 @@ class App extends React.Component {
 
     podStatsHandler(message) {
         console.log("Received pod stats");
-    }
-
-    isPodConnectedHandler(message) {
-        this.setState({connectedToPod: true});
     }
 
     render() {

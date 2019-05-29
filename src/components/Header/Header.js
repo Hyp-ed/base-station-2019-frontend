@@ -16,7 +16,7 @@ function Header(props) {
             <ProgressBar id="pod-progress" animated now={podProgress} label={podProgress} />
             <div className="pod-status">
                 <p className={`status-text connection-text ${connectionTextClassName}`}>
-                    {connectedToPod.toUpperCase()}
+                    {connectedToPod}
                 </p>
                 <p className="status-text pod-status-text">IDLE</p>
             </div>
