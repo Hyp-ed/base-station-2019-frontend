@@ -13,12 +13,12 @@ function Header(props) {
     return (
         <div className="header">
             <img id="logo" src={logo} alt="HypED logo"/>
-            <ProgressBar id="pod-progress" animated now={podProgress} label={podProgress} />
+            <ProgressBar id="pod-progress" animated now={podProgress} label={props.podDistance} />
             <div className="pod-status">
                 <p className={`status-text connection-text ${connectionTextClassName}`}>
                     {connectedToPod}
                 </p>
-                <p className="status-text pod-status-text">IDLE</p>
+                <p className="status-text pod-status-text">{props.podState}</p>
             </div>
         </div>
     );

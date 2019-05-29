@@ -36,14 +36,23 @@ class App extends React.Component {
     }
 
     podStatsHandler(message) {
-        console.log("Received pod stats");
+        const receivedPodStats = JSON.parse(message.body);
+
+        this.setState({
+            podStats: receivedPodStats,
+        });
     }
 
     render() {
+        const podDistance = typeof this.state.podStats === 'undefined' ? 0 : this.state.podStats.navigation.distance;
+        const podState = typeof this.state.podStats === 'undefined' ? '' : this.state.podStats.stateMachine.currentState;
+
         return (
             <div className="wrapper">
                 <Header
                     connectedToPod={this.state.connectedToPod}
+                    podDistance={podDistance}
+                    podState={podState}
                 />
                 <div id="gauges-1">
                     <div id="velocity-gauge">
