@@ -27,12 +27,7 @@ class ButtonContainer extends React.Component {
                 <div className="button-container-button">
                     <Button
                         name='CALIB.'
-                    />
-                </div>
-                <div className="button-container-button">
-                    <Button
-                        name='STOP'
-                        handleClick={() => this.sendMessage({command: 'STOP'})}
+                        handleClick={() => this.sendMessage({command: 'CALIBRATE'})}
                     />
                 </div>
                 <div className="button-container-button">
@@ -45,6 +40,12 @@ class ButtonContainer extends React.Component {
                     <Button
                         name='LAUNCH'
                         handleClick={() => this.sendMessage({command: 'LAUNCH'})}
+                    />
+                </div>
+                <div className="button-container-button">
+                    <Button
+                        name='STOP'
+                        handleClick={() => this.sendMessage({command: 'STOP'})}
                     />
                 </div>
             </div>
