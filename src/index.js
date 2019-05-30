@@ -27,13 +27,16 @@ class App extends React.Component {
             .then(text => console.log(`CONNECTED TO BACKEND, SERVER CONNECTED TO POD CLIENT: ${text}`))
             .then(() => {
                 const stompClient = Stomp.client('ws://localhost:8080/connecthere');
+                this.setState({
+                    stompClient: stompClient,
+                });
                 stompClient.connect({}, (frame) => {
                     stompClient.subscribe('/topic/podStats', (message) => this.podStatsHandler(message));
                     stompClient.subscribe('/topic/isPodConnected', (message) => this.setState({connectedToPod: true}));
                     stompClient.send("/app/pullData");
                 })
             })
-            .catch(error => console.log(error));
+            .catch(error => console.error(error));
     }
 
     podStatsHandler(message) {
@@ -41,6 +44,30 @@ class App extends React.Component {
 
         this.setState({
             podStats: receivedPodStats,
+        });
+    }
+
+    sendMessage(msg) {
+        const stompClient = this.state.stompClient;
+
+        if (stompClient) {
+            stompClient.send("/app/sendMessage", {}, JSON.stringify(msg));
+            console.log(`Sent message: ${msg.command}`);
+        }
+        else {
+            console.error('Could not send message; stompClient undefined (frontend probably not connected to backend)');
+        }
+    }
+
+    sendLaunchCommand() {
+        this.sendMessage({
+            command: 'LAUNCH',
+        });
+    }
+
+    sendResetCommand() {
+        this.sendMessage({
+            command: 'RESET',
         });
     }
 
@@ -93,6 +120,11 @@ class App extends React.Component {
                 </div>
                 <Button
                     name='LAUNCH'
+                    handleClick={() => this.sendLaunchCommand()}
+                />
+                <Button
+                    name='RESET'
+                    handleClick={() => this.sendResetCommand()}
                 />
             </div>
         );
