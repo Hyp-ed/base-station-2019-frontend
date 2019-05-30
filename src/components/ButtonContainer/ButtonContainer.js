@@ -78,16 +78,7 @@ function determineDisabledButtons(state) {
                 calibrate: false,
                 reset: true,
                 launch: true,
-                stop: true,
-            };
-        case 'CALIBRATING':
-            return {
-                svpGo: true,
-                svpStop: true,
-                calibrate: true,
-                reset: true,
-                launch: true,
-                stop: true,
+                stop: false,
             };
         case 'READY':
             return {
@@ -98,8 +89,57 @@ function determineDisabledButtons(state) {
                 launch: false,
                 stop: true,
             }
+        case 'CALIBRATING':
+        case 'ACCELERATING':
+        case 'NOMINAL_BRAKING':
+            return {
+                svpGo: true,
+                svpStop: true,
+                calibrate: true,
+                reset: true,
+                launch: true,
+                stop: false,
+            }
+        case 'RUN_COMPLETE':
+            return {
+                svpGo: false,
+                svpStop: true,
+                calibrate: true,
+                reset: true,
+                launch: true,
+                stop: false,
+            }
+        case 'EXITING':
+            return {
+                svpGo: true,
+                svpStop: false,
+                calibrate: true,
+                reset: true,
+                launch: true,
+                stop: false,
+            }
+        case 'FINISHED':
+            return {
+                svpGo: true,
+                svpStop: true,
+                calibrate: true,
+                reset: false,
+                launch: true,
+                stop: true,
+            }
+        case 'EMERGENCY_BRAKING':
+        case 'FAILURE_STOPPED':
+            return {
+                svpGo: true,
+                svpStop: true,
+                calibrate: true,
+                reset: true,
+                launch: true,
+                stop: true,
+            };
         default:
             console.error("Error: received invalid state when trying to decide if button is disabled or not, probably not connected")
+
             return {
                 svpGo: true,
                 svpStop: true,
