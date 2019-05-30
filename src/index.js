@@ -7,7 +7,7 @@ import Stomp from 'stompjs';
 import Header from './components/Header/Header';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 import BarContainer from './components/BarContainer/BarContainer';
-import Button from './components/Button/Button';
+import ButtonContainer from './components/ButtonContainer/ButtonContainer';
 
 class App extends React.Component {
     constructor(props) {
@@ -47,31 +47,8 @@ class App extends React.Component {
         });
     }
 
-    sendMessage(msg) {
-        const stompClient = this.state.stompClient;
-
-        if (stompClient) {
-            stompClient.send("/app/sendMessage", {}, JSON.stringify(msg));
-            console.log(`Sent message: ${msg.command}`);
-        }
-        else {
-            console.error('Could not send message; stompClient undefined (frontend probably not connected to backend)');
-        }
-    }
-
-    sendLaunchCommand() {
-        this.sendMessage({
-            command: 'LAUNCH',
-        });
-    }
-
-    sendResetCommand() {
-        this.sendMessage({
-            command: 'RESET',
-        });
-    }
-
     render() {
+        const stompClient = this.state.stompClient;
         const podDistance = typeof this.state.podStats === 'undefined' ? 0 : this.state.podStats.navigation.distance;
         const podState = typeof this.state.podStats === 'undefined' ? '' : this.state.podStats.stateMachine.currentState;
 
@@ -118,13 +95,9 @@ class App extends React.Component {
                         bars={barTemplate}
                     />
                 </div>
-                <Button
-                    name='LAUNCH'
-                    handleClick={() => this.sendLaunchCommand()}
-                />
-                <Button
-                    name='RESET'
-                    handleClick={() => this.sendResetCommand()}
+                <ButtonContainer
+                    stompClient={stompClient}
+                    state={podState}
                 />
             </div>
         );

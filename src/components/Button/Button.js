@@ -12,7 +12,7 @@ class Button extends React.Component {
 
     render() {
         return (
-            <button disabled={this.state.disabled} className='button-root' onClick={this.props.handleClick}>
+            <button disabled={this.state.disabled} className="button-root" onClick={this.props.handleClick}>
                 {this.props.name}
             </button>
         );
