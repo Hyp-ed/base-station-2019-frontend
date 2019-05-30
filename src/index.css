@@ -23,13 +23,6 @@ h1, h2 {
 }
 
 /* width breakpoint for wrapper class */
-@media (min-width: 992px) {
-    .wrapper {
-        max-width: 960px;
-    }
-}
-
-/* width breakpoint for wrapper class */
 @media (min-width: 1250px) {
     .wrapper {
         max-width: 1250px;
@@ -56,7 +49,7 @@ h1, h2 {
     grid-row: 2 / 4;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 /* lato-300 - latin */
