@@ -11,14 +11,8 @@ class Button extends React.Component {
     }
 
     render() {
-        let buttonClassName = 'button-root';
-
-        if (this.state.disabled) {  // maybe keep as prop?
-            buttonClassName += ' disabled';
-        }
-
         return (
-            <button className={buttonClassName} onClick={this.props.handleClick}>
+            <button disabled={this.state.disabled} className='button-root' onClick={this.props.handleClick}>
                 {this.props.name}
             </button>
         );
