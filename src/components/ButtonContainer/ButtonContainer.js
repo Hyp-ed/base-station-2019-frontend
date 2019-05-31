@@ -87,7 +87,7 @@ function determineDisabledButtons(state) {
                 calibrate: true,
                 reset: true,
                 launch: false,
-                stop: true,
+                stop: false,
             }
         case 'CALIBRATING':
         case 'ACCELERATING':
