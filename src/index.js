@@ -17,6 +17,7 @@ class App extends React.Component {
         };
 
         this.podStatsHandler = this.podStatsHandler.bind(this);
+        this.podConnectionStatusHandler = this.podConnectionStatusHandler.bind(this);
     }
 
     componentDidMount() {
@@ -32,7 +33,7 @@ class App extends React.Component {
                 });
                 stompClient.connect({}, (frame) => {
                     stompClient.subscribe('/topic/podStats', (message) => this.podStatsHandler(message));
-                    stompClient.subscribe('/topic/isPodConnected', (message) => this.setState({connectedToPod: true}));
+                    stompClient.subscribe('/topic/isPodConnected', (message) => this.podConnectionStatusHandler(message));
                     stompClient.send("/app/pullData");
                 })
             })
@@ -44,6 +45,14 @@ class App extends React.Component {
 
         this.setState({
             podStats: receivedPodStats,
+        });
+    }
+
+    podConnectionStatusHandler(message) {
+        const receivedPodConnectionStatus = message.body;
+
+        this.setState({
+            connectedToPod: receivedPodConnectionStatus === 'CONNECTED' ? true : false,
         });
     }
 
