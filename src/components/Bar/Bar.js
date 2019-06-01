@@ -10,7 +10,12 @@ function Bar(props) {
                 <div className="bar background"></div>
                 <div className="bar fill"></div>
             </div>
-            <h2 className="bar-value">{props.value} {props.unit}</h2>
+            <div className="bar value">
+                <h2 className="bar-value-text">{props.value}</h2>
+                <div className="bar-value-unit">
+                    <h2 className="bar-value-text">&nbsp;{props.unit}</h2>
+                </div>
+            </div>
         </div>
     );
 }

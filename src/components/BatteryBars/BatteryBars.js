@@ -1,9 +1,9 @@
-import './BarContainer.css';
+import './BatteryBars.css';
 
 import React from 'react';
 import Bar from '../Bar/Bar';
 
-function BarContainer(props) {
+function BatteryBars(props) {
     return (
         <div className="bar-container-root">
             <h1 className="bar-container-title">{props.title}</h1>
@@ -41,8 +41,8 @@ function BarContainer(props) {
     );
 }
 
-BarContainer.defaultProps = {
+BatteryBars.defaultProps = {
     values: {},
 }
 
-export default BarContainer;
+export default BatteryBars;

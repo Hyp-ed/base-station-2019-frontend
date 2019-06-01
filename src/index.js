@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import Stomp from 'stompjs';
 import Header from './components/Header/Header';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
-import BarContainer from './components/BarContainer/BarContainer';
+import BatteryBars from './components/BatteryBars/BatteryBars';
 import ButtonContainer from './components/ButtonContainer/ButtonContainer';
 
 class App extends React.Component {
@@ -91,22 +91,22 @@ class App extends React.Component {
                     />
                 </div>
                 <div id="battery-flexbox">
-                    <BarContainer
+                    <BatteryBars
                         title='HP BATTERY 1'
                         bars={barTemplate}
                         values={highPowerBatteryValues[0]}
                     />
-                    <BarContainer
+                    <BatteryBars
                         title='HP BATTERY 2'
                         bars={barTemplate}
                         values={highPowerBatteryValues[1]}
                     />
-                    <BarContainer
+                    <BatteryBars
                         title='LP BATTERY 1'
                         bars={barTemplate}
                         values={lowPowerBatteryValues[0]}
                     />
-                    <BarContainer
+                    <BatteryBars
                         title='LP BATTERY 2'
                         bars={barTemplate}
                         values={lowPowerBatteryValues[1]}
