@@ -17,7 +17,8 @@ class ButtonContainer extends React.Component {
     }
 
     render() {
-        const disabledButtons = determineDisabledButtons(this.props.state);
+        const state = this.props.connectedToPod ? this.props.state : 'NOT CONNECTED TO POD';
+        const disabledButtons = determineDisabledButtons(state);
 
         return (
             <div className="button-container-root">

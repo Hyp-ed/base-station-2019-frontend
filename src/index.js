@@ -34,6 +34,7 @@ class App extends React.Component {
                 stompClient.connect({}, (frame) => {
                     stompClient.subscribe('/topic/podStats', (message) => this.podStatsHandler(message));
                     stompClient.subscribe('/topic/isPodConnected', (message) => this.podConnectionStatusHandler(message));
+                    stompClient.subscribe('/topic/errors', (message) => console.error(`ERROR FROM BACKEND: ${message}`));
                     stompClient.send("/app/pullData");
                 })
             })
@@ -58,13 +59,14 @@ class App extends React.Component {
 
     render() {
         const stompClient = this.state.stompClient;
+        const connectedToPod = this.state.connectedToPod;
         const podDistance = typeof this.state.podStats === 'undefined' ? 0 : this.state.podStats.navigation.distance;
         const podState = typeof this.state.podStats === 'undefined' ? '' : this.state.podStats.stateMachine.currentState;
 
         return (
             <div className="wrapper">
                 <Header
-                    connectedToPod={this.state.connectedToPod}
+                    connectedToPod={connectedToPod}
                     podDistance={podDistance}
                     podState={podState}
                 />
@@ -106,6 +108,7 @@ class App extends React.Component {
                 </div>
                 <ButtonContainer
                     stompClient={stompClient}
+                    connectedToPod={connectedToPod}
                     state={podState}
                 />
             </div>
