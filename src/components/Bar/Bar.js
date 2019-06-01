@@ -15,4 +15,8 @@ function Bar(props) {
     );
 }
 
+Bar.defaultProps = {
+    value: 0,
+}
+
 export default Bar;

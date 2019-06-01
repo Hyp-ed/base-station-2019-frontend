@@ -60,8 +60,10 @@ class App extends React.Component {
     render() {
         const stompClient = this.state.stompClient;
         const connectedToPod = this.state.connectedToPod;
-        const podDistance = typeof this.state.podStats === 'undefined' ? 0 : this.state.podStats.navigation.distance;
-        const podState = typeof this.state.podStats === 'undefined' ? '' : this.state.podStats.stateMachine.currentState;
+        const podDistance = typeof this.state.podStats === 'undefined' ? 0 : this.state.podStats.navigation.distance;  // maybe change to defaultProps
+        const podState = typeof this.state.podStats === 'undefined' ? '' : this.state.podStats.stateMachine.currentState  ;// maybe change to defaultProps
+        const highPowerBatteryValues = typeof this.state.podStats === 'undefined' ? {} : this.state.podStats.batteries.highPowerBatteries;
+        const lowPowerBatteryValues = typeof this.state.podStats === 'undefined' ? {} : this.state.podStats.batteries.lowPowerBatteries;
 
         return (
             <div className="wrapper">
@@ -92,18 +94,22 @@ class App extends React.Component {
                     <BarContainer
                         title='HP BATTERY 1'
                         bars={barTemplate}
+                        values={highPowerBatteryValues[0]}
                     />
                     <BarContainer
                         title='HP BATTERY 2'
                         bars={barTemplate}
+                        values={highPowerBatteryValues[1]}
                     />
                     <BarContainer
                         title='LP BATTERY 1'
                         bars={barTemplate}
+                        values={lowPowerBatteryValues[0]}
                     />
                     <BarContainer
                         title='LP BATTERY 2'
                         bars={barTemplate}
+                        values={lowPowerBatteryValues[1]}
                     />
                 </div>
                 <ButtonContainer
@@ -119,22 +125,18 @@ class App extends React.Component {
 const barTemplate = [{
                     title: 'BATTERY',
                     unit: '%',
-                    value: '87',  // actual value will be passed as prop later I guess?
                 },
                 {
                     title: 'VOLTAGE',
                     unit: 'V',
-                    value: '56',  // actual value will be passed as prop later I guess?
                 },
                 {
                     title: 'TEMPERATURE',
                     unit: '\u00b0',
-                    value: '45',  // actual value will be passed as prop later I guess?
                 },
                 {
                     title: 'CURRENT',
                     unit: 'A',
-                    value: '89',  // actual value will be passed as prop later I guess?
                 }];
 
 const velocityGauges = [{

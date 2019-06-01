@@ -15,14 +15,12 @@ h1, h2 {
     margin: 10px auto;
 }
 
-/* width breakpoint for wrapper class */
 @media (min-width: 768px) {
     .wrapper {
         max-width: 720px;
     }
 }
 
-/* width breakpoint for wrapper class */
 @media (min-width: 1250px) {
     .wrapper {
         max-width: 1250px;
@@ -49,7 +47,18 @@ h1, h2 {
     grid-row: 2 / 4;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+    #battery-flexbox {
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 1250px) {
+    #battery-flexbox {
+        justify-content: space-between;
+    }
 }
 
 /* lato-300 - latin */
