@@ -139,7 +139,7 @@ function determineDisabledButtons(state) {
                 stop: true,
             };
         default:
-            console.error("Error: received invalid state when trying to decide if button is disabled or not, probably not connected")
+            console.error("Error: received invalid state when trying to decide if button is disabled or not")
 
             return {
                 svpGo: true,

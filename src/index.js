@@ -18,14 +18,15 @@ class App extends React.Component {
 
         this.podStatsHandler = this.podStatsHandler.bind(this);
         this.podConnectionStatusHandler = this.podConnectionStatusHandler.bind(this);
+        this.disconnectHandler = this.disconnectHandler.bind(this);
     }
 
     componentDidMount() {
         // ask backend to start base-station server instance
         // afterwards establish websocket connection to backend
         fetch('http://localhost:8080/server', {method: 'POST'})
-            .then(response => response.text(), error => Promise.reject('Error: could not communicate with backend (fetch() returned error)'))
-            .then(text => console.log(`CONNECTED TO BACKEND, SERVER CONNECTED TO POD CLIENT: ${text}`))
+            .then((response) => response.text(), error => Promise.reject('Error: could not communicate with backend (fetch() returned error)'))
+            .then((text) => console.log('CONNECTED TO BACKEND'))
             .then(() => {
                 const stompClient = Stomp.client('ws://localhost:8080/connecthere');
                 this.setState({
@@ -36,7 +37,7 @@ class App extends React.Component {
                     stompClient.subscribe('/topic/isPodConnected', (message) => this.podConnectionStatusHandler(message));
                     stompClient.subscribe('/topic/errors', (message) => console.error(`ERROR FROM BACKEND: ${message}`));
                     stompClient.send("/app/pullData");
-                })
+                }, (error) => this.disconnectHandler(error))
             })
             .catch(error => console.error(error));
     }
@@ -57,11 +58,24 @@ class App extends React.Component {
         });
     }
 
+    disconnectHandler(error) {
+        if (error.startsWith('Whoops! Lost connection')) {
+            console.error('DISCONNECTED FROM BACKEND');
+
+            this.setState({
+                connectedToPod: false,
+            });
+        }
+        else {
+            console.error(error);
+        }
+    }
+
     render() {
         const stompClient = this.state.stompClient;
         const connectedToPod = this.state.connectedToPod;
         const podDistance = typeof this.state.podStats === 'undefined' ? 0 : this.state.podStats.navigation.distance;  // maybe change to defaultProps
-        const podState = typeof this.state.podStats === 'undefined' ? '' : this.state.podStats.stateMachine.currentState  ;// maybe change to defaultProps
+        const podState = typeof this.state.podStats === 'undefined' ? '' : this.state.podStats.stateMachine.currentState;  // maybe change to defaultProps
         const highPowerBatteryValues = typeof this.state.podStats === 'undefined' ? {} : this.state.podStats.batteries.highPowerBatteries;
         const lowPowerBatteryValues = typeof this.state.podStats === 'undefined' ? {} : this.state.podStats.batteries.lowPowerBatteries;
 
