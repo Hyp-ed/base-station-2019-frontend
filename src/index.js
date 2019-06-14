@@ -8,6 +8,8 @@ import Header from './components/Header/Header';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 import BatteryBars from './components/BatteryBars/BatteryBars';
 import ButtonContainer from './components/ButtonContainer/ButtonContainer';
+import Indicator from './components/Indicator/Indicator';
+import IndicatorContainer from './components/IndicatorContainer/IndicatorContainer';
 
 class App extends React.Component {
     constructor(props) {
@@ -126,11 +128,19 @@ class App extends React.Component {
                         values={lowPowerBatteryValues[1]}
                     />
                 </div>
-                <ButtonContainer
-                    stompClient={stompClient}
-                    connectedToPod={connectedToPod}
-                    state={podState}
-                />
+                <div id="indicators">
+                    <IndicatorContainer 
+                        title='IMUS'
+                        indicators={imuIndicators}
+                    />
+                </div>
+                <div id="buttons">
+                    <ButtonContainer
+                        stompClient={stompClient}
+                        connectedToPod={connectedToPod}
+                        state={podState}
+                    />
+                </div>
             </div>
         );
     }
@@ -152,6 +162,19 @@ const barTemplate = [{
                     title: 'CURRENT',
                     unit: 'A',
                 }];
+
+const imuIndicators = [{
+                        indicatorName: 'IMU1'
+                    },
+                    {
+                        indicatorName: 'IMU2'
+                    },
+                    {
+                        indicatorName: 'IMU3'
+                    },
+                    {   
+                        indicatorName: 'IMU4'
+                    }];
 
 const velocityGauges = [{
                         rotate: '100',

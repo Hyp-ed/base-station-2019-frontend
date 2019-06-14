@@ -1,0 +1,33 @@
+.indicator-root {
+    border: none;
+    position: relative;
+    display: flex;
+    align-items: left;
+    height: 23px;
+    width: 50px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+.indicator-name {
+    padding-top: 5px;
+    font-size: 22px;
+    font-family: 'Lato';
+    font-weight: 300;
+    color: #ffffff;
+    text-align: right;
+}
+
+.indicator.background {
+    width: 23px;
+    height: 23px;
+    background: #ffffff
+}
+
+.indicator.fill {
+    position: absolute;
+    top: 0px;
+    width: 23px;
+    height: 23px;
+    background: #D30935
+}

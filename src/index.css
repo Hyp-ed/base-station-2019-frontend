@@ -49,6 +49,18 @@ h1, h2 {
     flex-wrap: wrap;
 }
 
+#indicators {
+    grid-column: 2 / 3;
+    grid-row: 4/5;
+}
+
+#buttons {
+    grid-column: 2/4;
+    grid-row: 5/5;
+    padding-top: 50px;
+
+}
+
 @media (min-width: 768px) {
     #battery-flexbox {
         justify-content: flex-end;
@@ -60,6 +72,8 @@ h1, h2 {
         justify-content: space-between;
     }
 }
+
+
 
 /* lato-300 - latin */
 @font-face {

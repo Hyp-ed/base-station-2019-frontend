@@ -1,0 +1,21 @@
+.indicator-container-root {
+    margin-bottom: 0px;
+    width: 200px;
+}
+
+.indicator-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.indicator-container-title {
+    font-size: 20px;
+    font-family: 'Lato';
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.indicator-container-grid {
+    display: flex;
+}
