@@ -1,12 +1,12 @@
 .indicator-container-root {
     margin-bottom: 0px;
-    width: 200px;
 }
 
 .indicator-container {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    height: 100%;
+    height: 100px;
 }
 
 .indicator-container-title {
@@ -14,8 +14,4 @@
     font-family: 'Lato';
     font-weight: 300;
     color: #ffffff;
-}
-
-.indicator-container-grid {
-    display: flex;
 }

@@ -12,7 +12,8 @@ function Indicator(props) {
                 </div>
                 <h2 className="indicator-name">&nbsp;{props.name}</h2>
             </div>
-        ); }
+        );
+    }
     else {
         return (
             <div className='indicator-root'>
