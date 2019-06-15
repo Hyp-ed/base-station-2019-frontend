@@ -1,11 +1,11 @@
 import './IndicatorContainer.css'
-import Indicator from '../Indicator/Indicator';
 
 import React from 'react';
+import Indicator from '../Indicator/Indicator';
 
 function IndicatorContainer(props) {
     const indicators = Array.from(props.indicators, indicator =>
-                                    <Indicator key={indicator.indicatorTitle} name={indicator.indicatorName} />
+                                    <Indicator key={indicator.indicatorName} name={indicator.indicatorName} />
                                  );
 
     return (

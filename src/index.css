@@ -58,7 +58,6 @@ h1, h2 {
     grid-column: 2/4;
     grid-row: 5/5;
     padding-top: 50px;
-
 }
 
 @media (min-width: 768px) {
@@ -72,8 +71,6 @@ h1, h2 {
         justify-content: space-between;
     }
 }
-
-
 
 /* lato-300 - latin */
 @font-face {
