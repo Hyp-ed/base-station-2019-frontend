@@ -208,23 +208,27 @@ const emBrakesIndicators = [{
                     }];
 
 const velocityGauge = [{
+                        key: 'velocityGauge',
                         rotate: '100',
                         size: '160',
                         unit: 'm/s'
                     }];
 
 const accelerationGauge = [{
+                            key: 'accelerationGauge',
                             rotate: '60',
                             size: '100',
                             unit: 'm/s\u00B2'
                         }];
 
 const motorGauges = [{
+                        key: 'RPM REAR LEFT',
                         rotate: '100',
                         size: '90',
                         gaugeTitle: 'RPM REAR LEFT',
                     },
                     {
+                        key: 'RPM REAR RIGHT',
                         rotate: '100',
                         size: '90',
                         gaugeTitle: 'RPM REAR RIGHT',

@@ -5,7 +5,7 @@ import Gauge from '../Gauge/Gauge';
 
 function GaugeContainer(props) {
     const gauges = Array.from(props.gauges, gauge =>
-                                <div key={gauge.gaugeTitle} className="gauge-container-flex-item">
+                                <div key={gauge.key} className="gauge-container-flex-item">
                                     <Gauge
                                         rotate={gauge.rotate}
                                         size={gauge.size}
