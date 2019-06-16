@@ -84,7 +84,7 @@ class App extends React.Component {
                 <Header
                     connectedToPod={connectedToPod}
                     podDistance={podDistance}
-                    podState={podState}
+                    podState='IDLE STATE'
                 />
                 <div id="gauges-1">
                     <div id="velocity-gauge">
@@ -127,9 +127,18 @@ class App extends React.Component {
                     />
                 </div>
                 <div id="indicators">
+                    <IndicatorContainer
+                        title='MODULES'
+                        indicators={moduleIndicators}
+                        
+                    />
                     <IndicatorContainer 
                         title='IMUS'
                         indicators={imuIndicators}
+                    />
+                    <IndicatorContainer
+                        title='EMERGENCY BRAKES'
+                        indicators={emBrakesIndicators}
                     />
                 </div>
                 <div id="buttons">
@@ -162,28 +171,56 @@ const barTemplate = [{
                 }];
 
 const imuIndicators = [{
-                        indicatorName: 'IMU 1'
+                        indicatorName: 'IMU1',
+                        enabled: true
                     },
                     {
-                        indicatorName: 'IMU 2'
+                        indicatorName: 'IMU2',
+                        enabled: false
                     },
                     {
-                        indicatorName: 'IMU 3'
+                        indicatorName: 'IMU3',
+                        enabled: false
                     },
                     {   
-                        indicatorName: 'IMU 4'
+                        indicatorName: 'IMU4',
+                        enabled: false
+                    }];
+
+const moduleIndicators = [{
+                        indicatorName: 'BAT'
+                    },
+                    {
+                        indicatorName: 'SEN'
+                    },
+                    {
+                        indicatorName: 'NAV'
+                    },
+                    {
+                        indicatorName: 'MTR',
+                        enabled: true
+                    }];
+
+const emBrakesIndicators = [{
+                        indicatorName: 'RETRACTED FRONT'
+                    },
+                    {
+                        indicatorName: 'RETRACTED REAR'
                     }];
 
 const velocityGauges = [{
+                        large: true,
                         rotate: '100',
                         size: '160',
                         gaugeTitle: '',
+                        unit: 'm/s'
                     }];
 
 const accelerationGauges = [{
                             rotate: '60',
                             size: '100',
                             gaugeTitle: '',
+                            unit: 'm/s\u00B2'
                         }];
 
 const motorGauges = [{
