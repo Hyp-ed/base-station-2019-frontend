@@ -1,7 +1,6 @@
 import './Header.css';
 
 import React from 'react';
-import ProgressBar from 'react-bootstrap/ProgressBar';
 import logo from '../../hyped.png';
 
 function Header(props) {
@@ -14,7 +13,7 @@ function Header(props) {
     return (
         <div className="header">
             <img id="logo" src={logo} alt="HypED logo"/>
-            <ProgressBar id="pod-progress" animated now={podProgress} label={props.podDistance} />
+            <div className='progress-bar'></div>
             <div className="pod-status">
                 <p className={`status-text connection-text ${connectionTextClassName}`} style={connectionTextStyle}>
                     {props.connectedToPod ? 'CONNECTED' : 'NOT CONNECTED'}
