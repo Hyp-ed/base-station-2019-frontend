@@ -90,12 +90,12 @@ class App extends React.Component {
                     <div id="velocity-gauge">
                         <GaugeContainer
                             title='VELOCITY'
-                            gauges={velocityGauges}
+                            gauges={velocityGauge}
                         />
                     </div>
                     <GaugeContainer
                         title='ACCELERATION'
-                        gauges={accelerationGauges}
+                        gauges={accelerationGauge}
                     />
                 </div>
                 <div id="gauges-2">
@@ -207,17 +207,15 @@ const emBrakesIndicators = [{
                         indicatorName: 'RETRACTED REAR'
                     }];
 
-const velocityGauges = [{
+const velocityGauge = [{
                         rotate: '100',
                         size: '160',
-                        gaugeTitle: '',
                         unit: 'm/s'
                     }];
 
-const accelerationGauges = [{
+const accelerationGauge = [{
                             rotate: '60',
                             size: '100',
-                            gaugeTitle: '',
                             unit: 'm/s\u00B2'
                         }];
 
