@@ -6,32 +6,6 @@
     margin-bottom: 10px;
 }
 
-.gauge-value {
-    position: relative;
-    font-size: 40px;
-    font-family: 'Lato';
-    font-weight: 300;
-    color: #707070;
-}
-
-.gauge-value-large {
-    position: relative;
-    font-size: 80px;
-    font-family: 'Lato';
-    font-weight: 300;
-    color: #707070;
-}
-
-.gauge-unit {
-    text-align: center;
-    align-self: flex-end;
-    position: absolute;
-    font-size: 18px;
-    font-family: 'Lato';
-    font-weight: 300;
-    color: #707070;
-}
-
 .gauge-background {
     background-color: #3B414B;
     border-radius: 50%;
@@ -74,6 +48,7 @@
 
 .inset {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #0f1d3a;
@@ -85,4 +60,19 @@
 
 .gauge-background:hover .inset {
     transform: scale(1.15);
+}
+
+.gauge-text {
+    font-family: 'Lato';
+    font-weight: 300;
+    color: #707070;
+    margin: 0px;
+}
+
+.gauge-text.value {
+    font-size: 40px;
+}
+
+.gauge-text.unit {
+    font-size: 18px;
 }

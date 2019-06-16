@@ -18,11 +18,9 @@ function Gauge(props) {
         margin: `${(props.size - (props.size * .75)) / 2}px`,
     };
 
-    var gaugeClassName = "gauge-value";
-    if (props.large) {
-        gaugeClassName = "gauge-value-large";
+    const gaugeValueStyle = {
+        fontSize: `${props.size * .35}px`,
     }
-    
 
     return (
         <div className="gauge-root">
@@ -39,12 +37,12 @@ function Gauge(props) {
                     <div className="circle" style={{...rotate, ...size}}></div>
                 </div>
                 <div className="inset" style={insetStyle}>
-                    <div className={gaugeClassName}>
+                    <p className="gauge-text value" style={gaugeValueStyle}>
                         {props.value}
-                    </div>
-                    <div className="gauge-unit">
+                    </p>
+                    <p className="gauge-text unit">
                         {props.unit}
-                    </div>
+                    </p>
                 </div>
             </div>
         </div>
@@ -53,7 +51,6 @@ function Gauge(props) {
 
 Gauge.defaultProps = {
     value: 0,
-    large: false,
 }
 
 export default Gauge;

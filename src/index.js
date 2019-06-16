@@ -208,7 +208,6 @@ const emBrakesIndicators = [{
                     }];
 
 const velocityGauges = [{
-                        large: true,
                         rotate: '100',
                         size: '160',
                         gaugeTitle: '',
