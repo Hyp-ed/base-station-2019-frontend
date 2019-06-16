@@ -130,7 +130,6 @@ class App extends React.Component {
                     <IndicatorContainer
                         title='MODULES'
                         indicators={moduleIndicators}
-                        
                     />
                     <IndicatorContainer 
                         title='IMUS'

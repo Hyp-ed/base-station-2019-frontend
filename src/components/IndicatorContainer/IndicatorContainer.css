@@ -1,14 +1,16 @@
 .indicator-container-root {
-    height: 100px;
-    width: 250px;
     margin-bottom: 0px;
+    width: 250px; /* hacky hardcoded solution bc of flexbox bug (sad reaccs):
+     * https://stackoverflow.com/questions/33891709/when-flexbox-items-wrap-in-column-mode-container-does-not-grow-its-width */
 }
 
 .indicator-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 80px;
+    justify-content: space-between;
+    align-content: flex-start;
+    height: 75px;
 }
 
 .indicator-container-title {
