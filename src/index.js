@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 import React from 'react';
@@ -8,7 +7,6 @@ import Header from './components/Header/Header';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 import BatteryBars from './components/BatteryBars/BatteryBars';
 import ButtonContainer from './components/ButtonContainer/ButtonContainer';
-import Indicator from './components/Indicator/Indicator';
 import IndicatorContainer from './components/IndicatorContainer/IndicatorContainer';
 
 class App extends React.Component {
@@ -164,16 +162,16 @@ const barTemplate = [{
                 }];
 
 const imuIndicators = [{
-                        indicatorName: 'IMU1'
+                        indicatorName: 'IMU 1'
                     },
                     {
-                        indicatorName: 'IMU2'
+                        indicatorName: 'IMU 2'
                     },
                     {
-                        indicatorName: 'IMU3'
+                        indicatorName: 'IMU 3'
                     },
                     {   
-                        indicatorName: 'IMU4'
+                        indicatorName: 'IMU 4'
                     }];
 
 const velocityGauges = [{

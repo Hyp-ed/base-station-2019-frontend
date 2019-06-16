@@ -6,9 +6,11 @@
     margin-bottom: 10px;
 }
 
-/* Override bootstrap progress bar color */
 .progress-bar {
-    background-color: #a30606;
+    flex-grow: 1; /* allow progress bar to grow and fill space */
+    background: #a30606;
+    height: 10px;
+    margin: 0px 40px 0px;
 }
 
 .pod-status {
@@ -44,9 +46,4 @@
 
 #logo {
     width: 20%;
-}
-
-#pod-progress {
-    flex-grow: 1; /* allow progress bar to grow and fill space */
-    margin: 0px 40px 0px;
 }

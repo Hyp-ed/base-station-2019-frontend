@@ -1,15 +1,13 @@
 import './IndicatorContainer.css'
-import Indicator from '../Indicator/Indicator';
 
 import React from 'react';
+import Indicator from '../Indicator/Indicator';
 
 function IndicatorContainer(props) {
-    const indicators = Array.from(props.indicators, indicator => <div key={indicator.indicatorTitle} className="indicator-container-flex-item">
-                                                        <Indicator
-                                                            name={indicator.indicatorName}
-                                                        />
-                                                    </div>
-                            );
+    const indicators = Array.from(props.indicators, indicator =>
+                                    <Indicator key={indicator.indicatorName} name={indicator.indicatorName} />
+                                 );
+
     return (
         <div className="indicator-container-root">
             <h1 className="indicator-container-title">
@@ -20,11 +18,6 @@ function IndicatorContainer(props) {
             </div>
         </div>
     );
-}
-
-IndicatorContainer.defaultProps = {
-    title: "default",
-
 }
 
 export default IndicatorContainer;

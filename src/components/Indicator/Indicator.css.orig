@@ -5,9 +5,13 @@
 }
 
 .indicator-name {
+<<<<<<< HEAD
+    font-size: 22px;
+=======
     margin-left: 10px;
     margin-bottom: 0px;
     font-size: 18px;
+>>>>>>> master
     font-family: 'Lato';
     font-weight: 300;
     color: #707070;
