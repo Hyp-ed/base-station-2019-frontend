@@ -84,7 +84,7 @@ class App extends React.Component {
                 <Header
                     connectedToPod={connectedToPod}
                     podDistance={podDistance}
-                    podState={podState}
+                    podState='IDLE STATE'
                 />
                 <div id="gauges-1">
                     <div id="velocity-gauge">
