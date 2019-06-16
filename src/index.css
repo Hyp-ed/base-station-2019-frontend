@@ -52,8 +52,7 @@ h1, h2 {
 
 #indicators {
     display: flex;
-    grid-column: 2 / 4; /* hacky solution bc of flexbox bug (sad reaccs):
-     * https://stackoverflow.com/questions/33891709/when-flexbox-items-wrap-in-column-mode-container-does-not-grow-its-width */
+    grid-column: 2 / 4;
 }
 
 #buttons {

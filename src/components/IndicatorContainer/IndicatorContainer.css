@@ -1,16 +1,10 @@
-.indicator-container-root {
-    margin-bottom: 0px;
-    width: 250px; /* hacky hardcoded solution bc of flexbox bug (sad reaccs):
-     * https://stackoverflow.com/questions/33891709/when-flexbox-items-wrap-in-column-mode-container-does-not-grow-its-width */
-}
-
 .indicator-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: flex-start;
-    height: 75px;
+    /* grid instead of column flexbox because of a bug in flexbox (sad reaccs):
+     * https://stackoverflow.com/a/55751683 */
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 45px 45px;
+    align-items: start;
 }
 
 .indicator-container-title {

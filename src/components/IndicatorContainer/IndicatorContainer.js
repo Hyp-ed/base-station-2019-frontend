@@ -13,7 +13,7 @@ function IndicatorContainer(props) {
                                  );
 
     return (
-        <div className="indicator-container-root">
+        <div>
             <h1 className="indicator-container-title">
                 {props.title}
             </h1>
