@@ -6,7 +6,34 @@
     margin-bottom: 10px;
 }
 
+.gauge-value {
+    position: relative;
+    font-size: 40px;
+    font-family: 'Lato';
+    font-weight: 300;
+    color: #707070;
+}
+
+.gauge-value-large {
+    position: relative;
+    font-size: 80px;
+    font-family: 'Lato';
+    font-weight: 300;
+    color: #707070;
+}
+
+.gauge-unit {
+    text-align: center;
+    align-self: flex-end;
+    position: absolute;
+    font-size: 18px;
+    font-family: 'Lato';
+    font-weight: 300;
+    color: #707070;
+}
+
 .gauge-background {
+    text-align: right;
     background-color: #3B414B;
     border-radius: 50%;
     position: relative;
@@ -47,6 +74,9 @@
 }
 
 .inset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #0f1d3a;
     border-radius: 50%;
     position: absolute;
