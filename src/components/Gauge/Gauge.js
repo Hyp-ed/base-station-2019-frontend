@@ -39,14 +39,13 @@ function Gauge(props) {
                     <div className="circle" style={{...rotate, ...size}}></div>
                 </div>
                 <div className="inset" style={insetStyle}>
-                <div className={gaugeClassName}>
-                    {props.value}
+                    <div className={gaugeClassName}>
+                        {props.value}
+                    </div>
+                    <div className="gauge-unit">
+                        {props.unit}
+                    </div>
                 </div>
-                <div className="gauge-unit">
-                    {props.unit}
-                </div>
-                </div>
-               
             </div>
         </div>
     );
