@@ -3,6 +3,7 @@ import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Stomp from 'stompjs';
+import config from './config.json'
 import Header from './components/Header/Header';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 import BatteryBars from './components/BatteryBars/BatteryBars';
@@ -90,54 +91,54 @@ class App extends React.Component {
                     <div id="velocity-gauge">
                         <GaugeContainer
                             title='VELOCITY'
-                            gauges={velocityGauge}
+                            gauges={config['velocityGauge']}
                         />
                     </div>
                     <GaugeContainer
                         title='ACCELERATION'
-                        gauges={accelerationGauge}
+                        gauges={config['accelerationGauge']}
                     />
                 </div>
                 <div id="gauges-2">
                     <GaugeContainer
                         title='MOTORS'
-                        gauges={motorGauges}
+                        gauges={config['motorGauges']}
                     />
                 </div>
                 <div id="battery-flexbox">
                     <BatteryBars
                         title='HP BATTERY 1'
-                        bars={barTemplate}
+                        bars={config['batteryBarTemplate']}
                         values={highPowerBatteryValues[0]}
                     />
                     <BatteryBars
                         title='HP BATTERY 2'
-                        bars={barTemplate}
+                        bars={config['batteryBarTemplate']}
                         values={highPowerBatteryValues[1]}
                     />
                     <BatteryBars
                         title='LP BATTERY 1'
-                        bars={barTemplate}
+                        bars={config['batteryBarTemplate']}
                         values={lowPowerBatteryValues[0]}
                     />
                     <BatteryBars
                         title='LP BATTERY 2'
-                        bars={barTemplate}
+                        bars={config['batteryBarTemplate']}
                         values={lowPowerBatteryValues[1]}
                     />
                 </div>
                 <div id="indicators">
                     <IndicatorContainer
                         title='MODULES'
-                        indicators={moduleIndicators}
+                        indicators={config['moduleIndicators']}
                     />
                     <IndicatorContainer 
                         title='IMUS'
-                        indicators={imuIndicators}
+                        indicators={config['imuIndicators']}
                     />
                     <IndicatorContainer
                         title='EMERGENCY BRAKES'
-                        indicators={emBrakesIndicators}
+                        indicators={config['emBrakesIndicators']}
                     />
                 </div>
                 <div id="buttons">
@@ -151,87 +152,5 @@ class App extends React.Component {
         );
     }
 }
-
-const barTemplate = [{
-                    title: 'BATTERY',
-                    unit: '%',
-                },
-                {
-                    title: 'VOLTAGE',
-                    unit: 'V',
-                },
-                {
-                    title: 'TEMPERATURE',
-                    unit: '\u00b0',
-                },
-                {
-                    title: 'CURRENT',
-                    unit: 'A',
-                }];
-
-const imuIndicators = [{
-                        indicatorName: 'IMU1',
-                        enabled: true
-                    },
-                    {
-                        indicatorName: 'IMU2',
-                        enabled: false
-                    },
-                    {
-                        indicatorName: 'IMU3',
-                        enabled: false
-                    },
-                    {   
-                        indicatorName: 'IMU4',
-                        enabled: false
-                    }];
-
-const moduleIndicators = [{
-                        indicatorName: 'BAT'
-                    },
-                    {
-                        indicatorName: 'SEN'
-                    },
-                    {
-                        indicatorName: 'NAV'
-                    },
-                    {
-                        indicatorName: 'MTR',
-                        enabled: true
-                    }];
-
-const emBrakesIndicators = [{
-                        indicatorName: 'RETRACTED FRONT'
-                    },
-                    {
-                        indicatorName: 'RETRACTED REAR'
-                    }];
-
-const velocityGauge = [{
-                        key: 'velocityGauge',
-                        rotate: '100',
-                        size: '160',
-                        unit: 'm/s'
-                    }];
-
-const accelerationGauge = [{
-                            key: 'accelerationGauge',
-                            rotate: '60',
-                            size: '100',
-                            unit: 'm/s\u00B2'
-                        }];
-
-const motorGauges = [{
-                        key: 'RPM REAR LEFT',
-                        rotate: '100',
-                        size: '90',
-                        gaugeTitle: 'RPM REAR LEFT',
-                    },
-                    {
-                        key: 'RPM REAR RIGHT',
-                        rotate: '100',
-                        size: '90',
-                        gaugeTitle: 'RPM REAR RIGHT',
-                    }];
 
 ReactDOM.render(<App />, document.getElementById('root'));

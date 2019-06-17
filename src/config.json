@@ -1,0 +1,86 @@
+{
+    "batteryBarTemplate": [
+        {
+            "title": "BATTERY",
+            "unit": "%"
+        },
+        {
+            "title": "VOLTAGE",
+            "unit": "V"
+        },
+        {
+            "title": "TEMPERATURE",
+            "unit": "\u00b0"
+        },
+        {
+            "title": "CURRENT",
+            "unit": "A"
+        }
+    ],
+    "velocityGauge": [
+        {
+            "key": "velocityGauge",
+            "rotate": "100",
+            "size": "160",
+            "unit": "m/s"
+        }
+    ],
+    "accelerationGauge": [
+        {
+            "key": "accelerationGauge",
+            "rotate": "60",
+            "size": "100",
+            "unit": "m/s\u00B2"
+        }
+    ],
+    "motorGauges": [
+        {
+            "key": "RPM REAR LEFT",
+            "rotate": "100",
+            "size": "90",
+            "gaugeTitle": "RPM REAR LEFT"
+        },
+        {
+            "key": "RPM REAR RIGHT",
+            "rotate": "100",
+            "size": "90",
+            "gaugeTitle": "RPM REAR RIGHT"
+        }
+    ],
+    "imuIndicators": [
+        {
+            "indicatorName": "IMU 1"
+        },
+        {
+            "indicatorName": "IMU 2"
+        },
+        {
+            "indicatorName": "IMU 3"
+        },
+        {
+            "indicatorName": "IMU 4"
+        }
+    ],
+    "moduleIndicators": [
+        {
+            "indicatorName": "BAT"
+        },
+        {
+            "indicatorName": "SEN"
+        },
+        {
+            "indicatorName": "NAV"
+        },
+        {
+            "indicatorName": "MTR"
+        }
+    ],
+    "emBrakesIndicators": [
+        {
+            "indicatorName": "RETRACTED FRONT"
+        },
+        {
+            "indicatorName": "RETRACTED REAR"
+        }
+    ]
+}
