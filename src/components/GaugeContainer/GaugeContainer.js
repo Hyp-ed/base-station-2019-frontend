@@ -11,6 +11,7 @@ function GaugeContainer(props) {
                                         size={gauge.size}
                                         title={gauge.gaugeTitle}
                                         unit={gauge.unit}
+                                        value={gauge.value}
                                     />
                                 </div>
                              );

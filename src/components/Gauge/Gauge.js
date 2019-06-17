@@ -19,7 +19,7 @@ function Gauge(props) {
     };
 
     const gaugeValueStyle = {
-        fontSize: `${props.size * .35}px`,
+        fontSize: `${props.size * .25}px`,
     }
 
     return (

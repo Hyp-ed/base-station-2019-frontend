@@ -72,13 +72,43 @@ class App extends React.Component {
         }
     }
 
+    /* the matching gauge/value pair have to have the same index in their respective arrays */
+    getGauges(gauges, values) {
+        let newGauges = [];
+
+        for (let i = 0; i < gauges.length; i++) {
+            if (typeof values[i] !== 'undefined') {
+                newGauges.push({...gauges[i], value: Math.round(values[i])});
+            }
+            else {
+                newGauges.push({...gauges[i]});
+            }
+        }
+
+        return newGauges;
+    }
+
     render() {
         const stompClient = this.state.stompClient;
         const connectedToPod = this.state.connectedToPod;
-        const podDistance = typeof this.state.podStats === 'undefined' ? 0 : this.state.podStats.navigation.distance;
-        const podState = typeof this.state.podStats === 'undefined' ? '' : this.state.podStats.stateMachine.currentState;
-        const highPowerBatteryValues = typeof this.state.podStats === 'undefined' ? {} : this.state.podStats.batteries.highPowerBatteries;
-        const lowPowerBatteryValues = typeof this.state.podStats === 'undefined' ? {} : this.state.podStats.batteries.lowPowerBatteries;
+        const podDistance = typeof this.state.podStats === 'undefined'
+            ? 0
+            : this.state.podStats.navigation.distance;
+        const podState = typeof this.state.podStats === 'undefined'
+            ? ''
+            : this.state.podStats.stateMachine.currentState;
+        const velocityGauge = typeof this.state.podStats === 'undefined'
+            ? config['velocityGauge']
+            : this.getGauges(config['velocityGauge'], [this.state.podStats.navigation.velocity]);
+        const accelerationGauge = typeof this.state.podStats === 'undefined'
+            ? config['accelerationGauge']
+            : this.getGauges(config['accelerationGauge'], [this.state.podStats.navigation.acceleration]);
+        const highPowerBatteryValues = typeof this.state.podStats === 'undefined'
+            ? {}
+            : this.state.podStats.batteries.highPowerBatteries;
+        const lowPowerBatteryValues = typeof this.state.podStats === 'undefined'
+            ? {}
+            : this.state.podStats.batteries.lowPowerBatteries;
 
         return (
             <div className="wrapper">
@@ -91,12 +121,12 @@ class App extends React.Component {
                     <div id="velocity-gauge">
                         <GaugeContainer
                             title='VELOCITY'
-                            gauges={config['velocityGauge']}
+                            gauges={velocityGauge}
                         />
                     </div>
                     <GaugeContainer
                         title='ACCELERATION'
-                        gauges={config['accelerationGauge']}
+                        gauges={accelerationGauge}
                     />
                 </div>
                 <div id="gauges-2">
