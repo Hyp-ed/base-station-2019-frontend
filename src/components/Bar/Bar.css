@@ -10,7 +10,7 @@
     font-size: 16px;
     font-family: 'Lato';
     font-weight: 300;
-    color: grey;
+    color: #707070;
     text-align: right;
     margin-right: 10px;
     margin-bottom: 0px;
@@ -22,14 +22,14 @@
 
 .bar.background {
     width: 180px;
-    background: #3B414B;
+    background-color: #3B414B;
 }
 
 .bar.fill {
     position: absolute;
     top: 0px;
     width: 150px;
-    background: #D30935;
+    background-color: #D30935;
 }
 
 .bar.value {
@@ -43,7 +43,7 @@
     font-size: 16px;
     font-family: 'Lato';
     font-weight: 300;
-    color: white;
+    color: #ffffff;
     text-align: right;
     margin-bottom: 0px;
 }

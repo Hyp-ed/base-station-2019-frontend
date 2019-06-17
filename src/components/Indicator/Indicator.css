@@ -17,12 +17,13 @@
 .indicator-background {
     width: 30px;
     height: 30px;
+    background-color: #3B414B;
 }
 
 .indicator-background.operational {
-    background: #ffffff
+    background-color: #ffffff;
 }
 
 .indicator-background.not-operational {
-    background: #a30606;
+    background-color: #a30606;
 }
