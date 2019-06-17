@@ -17,7 +17,7 @@ class App extends React.Component {
             connectedToPod: false,
         };
 
-        this.podStatsHandler = this.podStatsHandler.bind(this);
+        this.podDataHandler = this.podDataHandler.bind(this);
         this.podConnectionStatusHandler = this.podConnectionStatusHandler.bind(this);
         this.disconnectHandler = this.disconnectHandler.bind(this);
     }
@@ -34,7 +34,7 @@ class App extends React.Component {
                     stompClient: stompClient,
                 });
                 stompClient.connect({}, (frame) => {
-                    stompClient.subscribe('/topic/podStats', (message) => this.podStatsHandler(message));
+                    stompClient.subscribe('/topic/podData', (message) => this.podDataHandler(message));
                     stompClient.subscribe('/topic/isPodConnected', (message) => this.podConnectionStatusHandler(message));
                     stompClient.subscribe('/topic/errors', (message) => console.error(`ERROR FROM BACKEND: ${message}`));
                     stompClient.send("/app/pullData");
@@ -43,11 +43,11 @@ class App extends React.Component {
             .catch(error => console.error(error));
     }
 
-    podStatsHandler(message) {
-        const receivedPodStats = JSON.parse(message.body);
+    podDataHandler(message) {
+        const receivedPodData = JSON.parse(message.body);
 
         this.setState({
-            podStats: receivedPodStats,
+            podData: receivedPodData,
         });
     }
 
@@ -121,36 +121,36 @@ class App extends React.Component {
     render() {
         const stompClient = this.state.stompClient;
         const connectedToPod = this.state.connectedToPod;
-        const podDistance = typeof this.state.podStats === 'undefined'
+        const podDistance = typeof this.state.podData === 'undefined'
             ? 0
-            : this.state.podStats.navigation.distance;
-        const podState = typeof this.state.podStats === 'undefined'
+            : this.state.podData.navigation.distance;
+        const podState = typeof this.state.podData === 'undefined'
             ? ''
-            : this.state.podStats.stateMachine.currentState;
-        const velocityGauge = typeof this.state.podStats === 'undefined'
+            : this.state.podData.stateMachine.currentState;
+        const velocityGauge = typeof this.state.podData === 'undefined'
             ? config['velocityGauge']
-            : this.getGauges(config['velocityGauge'], [this.state.podStats.navigation.velocity]);
-        const accelerationGauge = typeof this.state.podStats === 'undefined'
+            : this.getGauges(config['velocityGauge'], [this.state.podData.navigation.velocity]);
+        const accelerationGauge = typeof this.state.podData === 'undefined'
             ? config['accelerationGauge']
-            : this.getGauges(config['accelerationGauge'], [this.state.podStats.navigation.acceleration]);
-        const moduleIndicators = typeof this.state.podStats === 'undefined'
+            : this.getGauges(config['accelerationGauge'], [this.state.podData.navigation.acceleration]);
+        const moduleIndicators = typeof this.state.podData === 'undefined'
             ? config['moduleIndicators']
             : this.getIndicators(config['moduleIndicators'], [
                 // MAKE SURE THIS ORDER ALIGNS WITH config.json!!!
-                this.convertModuleStatus(this.state.podStats.batteries.moduleStatus),
-                this.convertModuleStatus(this.state.podStats.sensors.moduleStatus),
-                this.convertModuleStatus(this.state.podStats.navigation.moduleStatus),
-                this.convertModuleStatus(this.state.podStats.motors.moduleStatus)
+                this.convertModuleStatus(this.state.podData.batteries.moduleStatus),
+                this.convertModuleStatus(this.state.podData.sensors.moduleStatus),
+                this.convertModuleStatus(this.state.podData.navigation.moduleStatus),
+                this.convertModuleStatus(this.state.podData.motors.moduleStatus)
             ])
-        const imuIndicators = typeof this.state.podStats === 'undefined'
+        const imuIndicators = typeof this.state.podData === 'undefined'
             ? config['imuIndicators']
-            : this.getIndicators(config['imuIndicators'], this.convertImuStatuses(this.state.podStats.sensors.imu));
-        const highPowerBatteryValues = typeof this.state.podStats === 'undefined'
+            : this.getIndicators(config['imuIndicators'], this.convertImuStatuses(this.state.podData.sensors.imu));
+        const highPowerBatteryValues = typeof this.state.podData === 'undefined'
             ? {}
-            : this.state.podStats.batteries.highPowerBatteries;
-        const lowPowerBatteryValues = typeof this.state.podStats === 'undefined'
+            : this.state.podData.batteries.highPowerBatteries;
+        const lowPowerBatteryValues = typeof this.state.podData === 'undefined'
             ? {}
-            : this.state.podStats.batteries.lowPowerBatteries;
+            : this.state.podData.batteries.lowPowerBatteries;
 
         return (
             <div className="wrapper">
