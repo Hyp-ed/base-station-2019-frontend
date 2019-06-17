@@ -75,8 +75,8 @@ class App extends React.Component {
     render() {
         const stompClient = this.state.stompClient;
         const connectedToPod = this.state.connectedToPod;
-        const podDistance = typeof this.state.podStats === 'undefined' ? 0 : this.state.podStats.navigation.distance;  // maybe change to defaultProps
-        const podState = typeof this.state.podStats === 'undefined' ? '' : this.state.podStats.stateMachine.currentState;  // maybe change to defaultProps
+        const podDistance = typeof this.state.podStats === 'undefined' ? 0 : this.state.podStats.navigation.distance;
+        const podState = typeof this.state.podStats === 'undefined' ? '' : this.state.podStats.stateMachine.currentState;
         const highPowerBatteryValues = typeof this.state.podStats === 'undefined' ? {} : this.state.podStats.batteries.highPowerBatteries;
         const lowPowerBatteryValues = typeof this.state.podStats === 'undefined' ? {} : this.state.podStats.batteries.lowPowerBatteries;
 
