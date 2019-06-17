@@ -88,8 +88,34 @@ class App extends React.Component {
         return newGauges;
     }
 
+    /* the matching indicator/status pair have to have the same index in their respective arrays */
+    getIndicators(indicators, statuses) {
+        let newIndicators = [];
+
+        for (let i = 0; i < indicators.length; i++) {
+            if (typeof statuses[i] !== 'undefined') {
+                newIndicators.push({...indicators[i], operational: statuses[i]});
+            }
+            else {
+                newIndicators.push({...indicators[i]});
+            }
+        }
+
+        return newIndicators;
+    }
+
     convertModuleStatus(status) {
         return status === "CRITICAL_FAILURE" ? false : true;
+    }
+
+    convertImuStatuses(imuData) {
+        let imuStatuses = [];
+
+        for (const imu of imuData) {
+            imuStatuses.push(imu.operational);
+        }
+
+        return imuStatuses;
     }
 
     render() {
@@ -107,6 +133,18 @@ class App extends React.Component {
         const accelerationGauge = typeof this.state.podStats === 'undefined'
             ? config['accelerationGauge']
             : this.getGauges(config['accelerationGauge'], [this.state.podStats.navigation.acceleration]);
+        const moduleIndicators = typeof this.state.podStats === 'undefined'
+            ? config['moduleIndicators']
+            : this.getIndicators(config['moduleIndicators'], [
+                // MAKE SURE THIS ORDER ALIGNS WITH config.json!!!
+                this.convertModuleStatus(this.state.podStats.batteries.moduleStatus),
+                this.convertModuleStatus(this.state.podStats.sensors.moduleStatus),
+                this.convertModuleStatus(this.state.podStats.navigation.moduleStatus),
+                this.convertModuleStatus(this.state.podStats.motors.moduleStatus)
+            ])
+        const imuIndicators = typeof this.state.podStats === 'undefined'
+            ? config['imuIndicators']
+            : this.getIndicators(config['imuIndicators'], this.convertImuStatuses(this.state.podStats.sensors.imu));
         const highPowerBatteryValues = typeof this.state.podStats === 'undefined'
             ? {}
             : this.state.podStats.batteries.highPowerBatteries;
@@ -164,32 +202,11 @@ class App extends React.Component {
                 <div id="indicators">
                     <IndicatorContainer
                         title='MODULES'
-                        indicators={[
-                            {
-                                indicatorName: "BAT",
-                                ...(typeof this.state.podStats !== 'undefined' &&
-                                    {operational: this.convertModuleStatus(this.state.podStats.batteries.moduleStatus)})
-                            },
-                            {
-                                indicatorName: "SEN",
-                                ...(typeof this.state.podStats !== 'undefined' &&
-                                    {operational: this.convertModuleStatus(this.state.podStats.sensors.moduleStatus)})
-                            },
-                            {
-                                indicatorName: "NAV",
-                                ...(typeof this.state.podStats !== 'undefined' &&
-                                    {operational: this.convertModuleStatus(this.state.podStats.navigation.moduleStatus)})
-                            },
-                            {
-                                indicatorName: "MTR",
-                                ...(typeof this.state.podStats !== 'undefined' &&
-                                    {operational: this.convertModuleStatus(this.state.podStats.motors.moduleStatus)})
-                            },
-                        ]}
+                        indicators={moduleIndicators}
                     />
-                    <IndicatorContainer 
+                    <IndicatorContainer
                         title='IMUS'
-                        indicators={config['imuIndicators']}
+                        indicators={imuIndicators}
                     />
                     <IndicatorContainer
                         title='EMERGENCY BRAKES'

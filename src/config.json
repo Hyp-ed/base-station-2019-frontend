@@ -47,6 +47,20 @@
             "gaugeTitle": "RPM REAR RIGHT"
         }
     ],
+    "moduleIndicators": [
+        {
+            "indicatorName": "BAT"
+        },
+        {
+            "indicatorName": "SEN"
+        },
+        {
+            "indicatorName": "NAV"
+        },
+        {
+            "indicatorName": "MTR"
+        }
+    ],
     "imuIndicators": [
         {
             "indicatorName": "IMU 1"
