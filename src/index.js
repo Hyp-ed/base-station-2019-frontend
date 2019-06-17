@@ -109,13 +109,24 @@ class App extends React.Component {
     }
 
     convertImuStatuses(imuData) {
-        let imuStatuses = [];
+        let newImuStatuses = [];
 
         for (const imu of imuData) {
-            imuStatuses.push(imu.operational);
+            newImuStatuses.push(imu.operational);
         }
 
-        return imuStatuses;
+        return newImuStatuses;
+    }
+
+    convertEmBrakesStatuses(brakes) {
+        let newEmBrakesStatuses = [];
+
+        for (const brake in brakes) {
+            // negate status bc when brakes are true (engaged), we want this to show up as red (false)
+            newEmBrakesStatuses.push(!brakes[brake]);
+        }
+
+        return newEmBrakesStatuses;
     }
 
     render() {
@@ -145,6 +156,9 @@ class App extends React.Component {
         const imuIndicators = typeof this.state.podData === 'undefined'
             ? config['imuIndicators']
             : this.getIndicators(config['imuIndicators'], this.convertImuStatuses(this.state.podData.sensors.imu));
+        const emBrakesIndicators = typeof this.state.podData === 'undefined'
+            ? config['emBrakesIndicators']
+            : this.getIndicators(config['emBrakesIndicators'], this.convertEmBrakesStatuses(this.state.podData.emergencyBrakes));
         const highPowerBatteryValues = typeof this.state.podData === 'undefined'
             ? {}
             : this.state.podData.batteries.highPowerBatteries;
@@ -210,7 +224,7 @@ class App extends React.Component {
                     />
                     <IndicatorContainer
                         title='EMERGENCY BRAKES'
-                        indicators={config['emBrakesIndicators']}
+                        indicators={emBrakesIndicators}
                     />
                 </div>
                 <div id="buttons">
