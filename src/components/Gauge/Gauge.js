@@ -50,7 +50,7 @@ function Gauge(props) {
 }
 
 Gauge.defaultProps = {
-    value: 0,
+    value: '-',
 }
 
 export default Gauge;

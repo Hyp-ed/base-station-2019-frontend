@@ -61,20 +61,6 @@
             "indicatorName": "IMU 4"
         }
     ],
-    "moduleIndicators": [
-        {
-            "indicatorName": "BAT"
-        },
-        {
-            "indicatorName": "SEN"
-        },
-        {
-            "indicatorName": "NAV"
-        },
-        {
-            "indicatorName": "MTR"
-        }
-    ],
     "emBrakesIndicators": [
         {
             "indicatorName": "RETRACTED FRONT"

@@ -17,5 +17,12 @@
 .indicator-background {
     width: 30px;
     height: 30px;
+}
+
+.indicator-background.operational {
     background: #ffffff
+}
+
+.indicator-background.not-operational {
+    background: #a30606;
 }

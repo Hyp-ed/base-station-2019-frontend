@@ -8,7 +8,7 @@ function IndicatorContainer(props) {
                                     <Indicator
                                         key={indicator.indicatorName}
                                         name={indicator.indicatorName}
-                                        enabled={indicator.enabled}
+                                        operational={indicator.operational}
                                     />
                                  );
 

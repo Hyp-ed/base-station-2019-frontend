@@ -88,6 +88,10 @@ class App extends React.Component {
         return newGauges;
     }
 
+    convertModuleStatus(status) {
+        return status === "CRITICAL_FAILURE" ? false : true;
+    }
+
     render() {
         const stompClient = this.state.stompClient;
         const connectedToPod = this.state.connectedToPod;
@@ -160,7 +164,28 @@ class App extends React.Component {
                 <div id="indicators">
                     <IndicatorContainer
                         title='MODULES'
-                        indicators={config['moduleIndicators']}
+                        indicators={[
+                            {
+                                indicatorName: "BAT",
+                                ...(typeof this.state.podStats !== 'undefined' &&
+                                    {operational: this.convertModuleStatus(this.state.podStats.batteries.moduleStatus)})
+                            },
+                            {
+                                indicatorName: "SEN",
+                                ...(typeof this.state.podStats !== 'undefined' &&
+                                    {operational: this.convertModuleStatus(this.state.podStats.sensors.moduleStatus)})
+                            },
+                            {
+                                indicatorName: "NAV",
+                                ...(typeof this.state.podStats !== 'undefined' &&
+                                    {operational: this.convertModuleStatus(this.state.podStats.navigation.moduleStatus)})
+                            },
+                            {
+                                indicatorName: "MTR",
+                                ...(typeof this.state.podStats !== 'undefined' &&
+                                    {operational: this.convertModuleStatus(this.state.podStats.motors.moduleStatus)})
+                            },
+                        ]}
                     />
                     <IndicatorContainer 
                         title='IMUS'
