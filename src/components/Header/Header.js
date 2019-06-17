@@ -14,6 +14,7 @@ function Header(props) {
         <div className="header">
             <img id="logo" src={logo} alt="HypED logo"/>
             <div className='progress-bar'></div>
+            <div className='timer'>{props.timer}s</div>
             <div className="pod-status">
                 <p className={`status-text connection-text ${connectionTextClassName}`} style={connectionTextStyle}>
                     {props.connectedToPod ? 'CONNECTED' : 'NOT CONNECTED'}
@@ -22,6 +23,10 @@ function Header(props) {
             </div>
         </div>
     );
+}
+
+Header.defaultProps = {
+    timer: 0,
 }
 
 export default Header;
