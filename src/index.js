@@ -202,6 +202,13 @@ class App extends React.Component {
                         bars={config['batteryBarTemplate']}
                         values={highPowerBatteryValues[1]}
                     />
+                    {
+                        // <BatteryBars
+                        //     title='HP BATTERY 3'
+                        //     bars={config['batteryBarTemplate']}
+                        //     values={highPowerBatteryValues[2]}
+                        // />
+                    }
                     <BatteryBars
                         title='LP BATTERY 1'
                         bars={config['batteryBarTemplate']}

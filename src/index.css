@@ -10,9 +10,8 @@ h1, h2 {
 .wrapper {
     display: grid;
     grid-template-columns: 380px 380px auto;
-    grid-template-rows: 110px 260px auto;
-    padding-right: 15px;
-    padding-left: 15px;
+    grid-template-rows: 90px 190px auto;
+    grid-gap: 25px 5px;
     margin: 10px auto;
 }
 
@@ -56,9 +55,7 @@ h1, h2 {
 }
 
 #buttons {
-    grid-column: 2/4;
-    grid-row: 5/5;
-    padding-top: 50px;
+    grid-column: 2 / 4;
 }
 
 @media (min-width: 768px) {

@@ -21,7 +21,7 @@
         {
             "key": "velocityGauge",
             "rotate": "100",
-            "size": "160",
+            "size": "140",
             "unit": "m/s"
         }
     ],
