@@ -20,11 +20,11 @@ progress[value] {
 }
 
 progress::-webkit-progress-bar {
-    background-color: gray;
+    background-color: #3b414b;
 }
 
 progress::-webkit-progress-value {
-    background-color: #a30606;
+    background-color: #d30935;
 }
 
 .pod-status {
