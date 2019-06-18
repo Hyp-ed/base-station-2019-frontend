@@ -13,7 +13,9 @@ function Header(props) {
     return (
         <div className="header">
             <img id="logo" src={logo} alt="HypED logo"/>
-            <div className='progress-bar'></div>
+            <div className='progress-bar'>
+                <progress max='100' value = {props.value}></progress>
+            </div>
             <div className="pod-status">
                 <p className={`status-text connection-text ${connectionTextClassName}`} style={connectionTextStyle}>
                     {props.connectedToPod ? 'CONNECTED' : 'NOT CONNECTED'}
@@ -22,6 +24,10 @@ function Header(props) {
             </div>
         </div>
     );
+}
+
+Header.defaultProps = {
+    value: 90,
 }
 
 export default Header;
