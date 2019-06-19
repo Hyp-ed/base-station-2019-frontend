@@ -29,12 +29,9 @@ function Header(props) {
 
     //continuously checks if state is accelerating
     //if true, stops checking
-    while (true) {
-        if (props.podState == "ACCELERATING") {
+        if (props.podState === "ACCELERATING") {
             startTimer(display);
-            break;
         }
-    }   
 
     return (
         <div className="header">
