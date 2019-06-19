@@ -24,12 +24,17 @@ function Header(props) {
     const connectionTextClassName = props.connectedToPod ? 'connected' : 'not-connected';
     const connectionTextStyle = props.connectedToPod ? {marginBottom: -5} : {};
     const podStatusTextStyle = props.connectedToPod ? {} : {display: 'none'};
-
+    
     var display = document.querySelector('#timer');
 
-    if (props.podState == "ACCELERATING") {
-        startTimer(display);
-    }
+    //continuously checks if state is accelerating
+    //if true, stops checking
+    while (true) {
+        if (props.podState == "ACCELERATING") {
+            startTimer(display);
+            break;
+        }
+    }   
 
     return (
         <div className="header">
