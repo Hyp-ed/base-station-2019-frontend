@@ -59,6 +59,13 @@ class ButtonContainer extends React.Component {
                 </div>
                 <div className="button-container-button">
                     <Button
+                        name='BRAKE'
+                        disabled={disabledButtons.brake}
+                        handleClick={() => this.sendMessage({command: 'NOMINAL_BRAKING'})}
+                    />
+                </div>
+                <div className="button-container-button">
+                    <Button
                         name='STOP'
                         disabled={disabledButtons.stop}
                         handleClick={() => this.sendMessage({command: 'STOP'})}
@@ -79,6 +86,7 @@ function determineDisabledButtons(state) {
                 calibrate: false,
                 reset: true,
                 launch: true,
+                brake: false,
                 stop: false,
             };
         case 'READY':
@@ -88,8 +96,9 @@ function determineDisabledButtons(state) {
                 calibrate: true,
                 reset: true,
                 launch: false,
+                brake: true,
                 stop: false,
-            }
+            };
         case 'CALIBRATING':
         case 'ACCELERATING':
         case 'NOMINAL_BRAKING':
@@ -99,8 +108,9 @@ function determineDisabledButtons(state) {
                 calibrate: true,
                 reset: true,
                 launch: true,
+                brake: true,
                 stop: false,
-            }
+            };
         case 'RUN_COMPLETE':
             return {
                 svpGo: false,
@@ -108,8 +118,9 @@ function determineDisabledButtons(state) {
                 calibrate: true,
                 reset: true,
                 launch: true,
+                brake: true,
                 stop: false,
-            }
+            };
         case 'EXITING':
             return {
                 svpGo: true,
@@ -117,8 +128,9 @@ function determineDisabledButtons(state) {
                 calibrate: true,
                 reset: true,
                 launch: true,
+                brake: true,
                 stop: false,
-            }
+            };
         case 'FINISHED':
             return {
                 svpGo: true,
@@ -126,8 +138,9 @@ function determineDisabledButtons(state) {
                 calibrate: true,
                 reset: false,
                 launch: true,
+                brake: true,
                 stop: true,
-            }
+            };
         case 'EMERGENCY_BRAKING':
         case 'FAILURE_STOPPED':
             return {
@@ -136,6 +149,7 @@ function determineDisabledButtons(state) {
                 calibrate: true,
                 reset: true,
                 launch: true,
+                brake: true,
                 stop: true,
             };
         default:
@@ -147,6 +161,7 @@ function determineDisabledButtons(state) {
                 calibrate: true,
                 reset: true,
                 launch: true,
+                brake: true,
                 stop: true,
             };
     }
