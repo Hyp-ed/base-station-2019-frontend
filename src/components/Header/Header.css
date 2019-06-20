@@ -5,11 +5,6 @@
     grid-row: 1 / 2;
 }
 
-.timer-wrapper {
-    width: 65px;
-    display: flex;
-}
-
 .progress-bar {
     flex-grow: 1; /* allow progress bar to grow and fill space */
     background: #a30606;
@@ -52,12 +47,4 @@
 
 #logo {
     width: 20%;
-}
-
-#timer {
-    width: 65px;
-    font-family: 'Lato';
-    font-size: 30px;
-    color: #ffffff;
-    text-align: center;
 }
