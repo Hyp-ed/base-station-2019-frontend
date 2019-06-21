@@ -152,7 +152,7 @@ class App extends React.Component {
                 this.convertModuleStatus(this.state.podData.sensors.moduleStatus),
                 this.convertModuleStatus(this.state.podData.navigation.moduleStatus),
                 this.convertModuleStatus(this.state.podData.motors.moduleStatus)
-            ])
+            ]);
         const imuIndicators = typeof this.state.podData === 'undefined'
             ? config['imuIndicators']
             : this.getIndicators(config['imuIndicators'], this.convertImuStatuses(this.state.podData.sensors.imu));
@@ -172,6 +172,7 @@ class App extends React.Component {
                     connectedToPod={connectedToPod}
                     podDistance={podDistance}
                     podState={podState}
+                    progressBarMax={config['progressBarMax']}
                 />
                 <div id="gauges-1">
                     <div id="velocity-gauge">

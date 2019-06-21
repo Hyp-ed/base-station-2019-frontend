@@ -27,7 +27,7 @@ function Gauge(props) {
     const size = {
         width: `${props.size}px`,
         height: `${props.size}px`,
-    }
+    };
 
     const insetStyle = {
         width: `${props.size * .75}px`,
@@ -37,7 +37,7 @@ function Gauge(props) {
 
     const gaugeValueStyle = {
         fontSize: `${props.size * .25}px`,
-    }
+    };
 
     return (
         <div className="gauge-root">
@@ -48,10 +48,10 @@ function Gauge(props) {
                 </div>
                 <div className="clip half">
                     <div className={`circle ${circleClassName}`} style={{...rotate, ...size}}></div>
-                    <div className={`circle seam ${circleClassName}`}style={{transform: `rotate(${props.rotate}deg)`, ...size}}> {/* rotate twice as fast */} </div>
+                    <div className={`circle seam ${circleClassName}`} style={{transform: `rotate(${props.rotate}deg)`, ...size}}> {/* rotate twice as fast */} </div>
                 </div>
                 <div className="clip full" style={{...rotate, ...size}}>
-                    <div className={`circle ${circleClassName}`}style={{...rotate, ...size}}></div>
+                    <div className={`circle ${circleClassName}`} style={{...rotate, ...size}}></div>
                 </div>
                 <div className="inset" style={insetStyle}>
                     <p className={`gauge-text value ${textClassName}`} style={gaugeValueStyle}>

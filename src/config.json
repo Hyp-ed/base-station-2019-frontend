@@ -86,5 +86,6 @@
         {
             "indicatorName": "RETRACTED REAR"
         }
-    ]
+    ],
+    "progressBarMax": 1250
 }

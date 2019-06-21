@@ -2,6 +2,7 @@ import './Header.css';
 
 import React from 'react';
 import logo from '../../hyped.png';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 function Header(props) {
     const podProgress = 90;
@@ -13,7 +14,10 @@ function Header(props) {
     return (
         <div className="header">
             <img id="logo" src={logo} alt="HypED logo"/>
-            <div className='progress-bar'></div>
+            <ProgressBar
+                progressBarMax={props.progressBarMax}
+                podDistance={props.podDistance}
+            />
             <div className='timer'>{props.timer}s</div>
             <div className="pod-status">
                 <p className={`status-text connection-text ${connectionTextClassName}`} style={connectionTextStyle}>

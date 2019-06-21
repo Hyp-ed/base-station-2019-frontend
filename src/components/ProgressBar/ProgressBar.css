@@ -1,0 +1,19 @@
+.progress-bar-root {
+    position: relative;
+    flex-grow: 1; /* allow progress bar to grow and fill space */
+    margin: 0px 40px 0px;
+}
+
+.progress-bar-background {
+    background: #a30606;
+    height: 10px;
+}
+
+.progress-bar-fill {
+    position: absolute;
+    top: 0px;
+    transform: translate(-50%, 0);
+    background: #ffffff;
+    height: 10px;
+    width: 30px
+}
