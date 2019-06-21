@@ -34,7 +34,7 @@
 
 .circle.danger-zone {
     background-color: #5a1725;
-    transform: rotate(150deg);
+    transform: rotate(140deg);
 }
 
 .clip .circle {
@@ -67,6 +67,10 @@
     font-weight: 300;
     color: #707070;
     margin: 0px;
+}
+
+.gauge-text.out-of-bounds {
+    color: #D30935;
 }
 
 .gauge-text.value {
