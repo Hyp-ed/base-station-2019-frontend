@@ -14,8 +14,10 @@ function Gauge(props) {
     }
 
     let textClassName = '';
+    let circleClassName = '';
     if (props.value < props.min || props.value > props.max) {
         textClassName = 'out-of-bounds';
+        circleClassName = 'out-of-bounds';
     }
 
     const rotate = {
@@ -45,11 +47,11 @@ function Gauge(props) {
                     <div className="circle danger-zone" style={size}></div>
                 </div>
                 <div className="clip half">
-                    <div className="circle" style={{...rotate, ...size}}></div>
-                    <div className="circle seam" style={{transform: `rotate(${props.rotate}deg)`, ...size}}> {/* rotate twice as fast */} </div>
+                    <div className={`circle ${circleClassName}`} style={{...rotate, ...size}}></div>
+                    <div className={`circle seam ${circleClassName}`}style={{transform: `rotate(${props.rotate}deg)`, ...size}}> {/* rotate twice as fast */} </div>
                 </div>
                 <div className="clip full" style={{...rotate, ...size}}>
-                    <div className="circle" style={{...rotate, ...size}}></div>
+                    <div className={`circle ${circleClassName}`}style={{...rotate, ...size}}></div>
                 </div>
                 <div className="inset" style={insetStyle}>
                     <p className={`gauge-text value ${textClassName}`} style={gaugeValueStyle}>
