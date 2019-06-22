@@ -5,8 +5,6 @@ import logo from '../../hyped.png';
 import ProgressBar from '../ProgressBar/ProgressBar';
 
 function Header(props) {
-    const podProgress = 90;
-
     const connectionTextClassName = props.connectedToPod ? 'connected' : 'not-connected';
     const connectionTextStyle = props.connectedToPod ? {marginBottom: -5} : {};
     const podStatusTextStyle = props.connectedToPod ? {} : {display: 'none'};
