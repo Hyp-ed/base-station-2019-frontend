@@ -174,7 +174,7 @@ class App extends React.Component {
                     podState={podState}
                     progressBarMax={config['progressBarMax']}
                 />
-                <div id="gauges-1">
+                <div id="gauges">
                     <div id="velocity-gauge">
                         <GaugeContainer
                             title='VELOCITY'
@@ -184,12 +184,6 @@ class App extends React.Component {
                     <GaugeContainer
                         title='ACCELERATION'
                         gauges={accelerationGauge}
-                    />
-                </div>
-                <div id="gauges-2">
-                    <GaugeContainer
-                        title='MOTORS'
-                        gauges={config['motorGauges']}
                     />
                 </div>
                 <div id="battery-flexbox">
@@ -203,13 +197,11 @@ class App extends React.Component {
                         bars={config['batteryBarTemplate']}
                         values={highPowerBatteryValues[1]}
                     />
-                    {
-                        // <BatteryBars
-                        //     title='HP BATTERY 3'
-                        //     bars={config['batteryBarTemplate']}
-                        //     values={highPowerBatteryValues[2]}
-                        // />
-                    }
+                    <BatteryBars
+                        title='HP BATTERY 3'
+                        bars={config['batteryBarTemplate']}
+                        values={highPowerBatteryValues[2]}
+                    />
                     <BatteryBars
                         title='LP BATTERY 1'
                         bars={config['batteryBarTemplate']}
@@ -219,6 +211,11 @@ class App extends React.Component {
                         title='LP BATTERY 2'
                         bars={config['batteryBarTemplate']}
                         values={lowPowerBatteryValues[1]}
+                    />
+                    <BatteryBars
+                        title='LP BATTERY 3'
+                        bars={config['batteryBarTemplate']}
+                        values={lowPowerBatteryValues[2]}
                     />
                 </div>
                 <div id="indicators">
