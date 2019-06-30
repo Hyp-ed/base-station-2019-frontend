@@ -13,6 +13,14 @@
     margin-right: 20px;
 }
 
+.progress-bar {
+    flex-grow: 1; /* allow progress bar to grow and fill space */
+    background: #a30606;
+    height: 10px;
+    margin: 0px 40px 0px;
+    margin-right: 20px
+}
+
 .pod-status {
     display: flex;
     flex-direction: column;

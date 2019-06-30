@@ -3,6 +3,7 @@ import './Header.css';
 import React from 'react';
 import logo from '../../hyped.png';
 import ProgressBar from '../ProgressBar/ProgressBar';
+import Timer from '../Timer/Timer';
 
 function Header(props) {
     const connectionTextClassName = props.connectedToPod ? 'connected' : 'not-connected';
@@ -16,7 +17,9 @@ function Header(props) {
                 progressBarMax={props.progressBarMax}
                 podDistance={props.podDistance}
             />
-            <div className='timer'>{props.timer}s</div>
+            <Timer
+                podState={props.podState}
+            />
             <div className="pod-status">
                 <p className={`status-text connection-text ${connectionTextClassName}`} style={connectionTextStyle}>
                     {props.connectedToPod ? 'CONNECTED' : 'NOT CONNECTED'}
@@ -25,10 +28,6 @@ function Header(props) {
             </div>
         </div>
     );
-}
-
-Header.defaultProps = {
-    timer: 0,
 }
 
 export default Header;
