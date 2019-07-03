@@ -1,22 +1,4 @@
 {
-    "batteryBarTemplate": [
-        {
-            "title": "BATTERY",
-            "unit": "%"
-        },
-        {
-            "title": "VOLTAGE",
-            "unit": "V"
-        },
-        {
-            "title": "TEMPERATURE",
-            "unit": "\u00b0"
-        },
-        {
-            "title": "CURRENT",
-            "unit": "A"
-        }
-    ],
     "velocityGauge": [
         {
             "key": "velocityGauge",
