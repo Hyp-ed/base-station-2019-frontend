@@ -30,15 +30,17 @@ class App extends React.Component {
             .then((text) => console.log('CONNECTED TO BACKEND'))
             .then(() => {
                 const stompClient = Stomp.client('ws://localhost:8080/connecthere');
+
                 this.setState({
                     stompClient: stompClient,
                 });
+
                 stompClient.connect({}, (frame) => {
                     stompClient.subscribe('/topic/podData', (message) => this.podDataHandler(message));
                     stompClient.subscribe('/topic/isPodConnected', (message) => this.podConnectionStatusHandler(message));
                     stompClient.subscribe('/topic/errors', (message) => console.error(`ERROR FROM BACKEND: ${message}`));
                     stompClient.send("/app/pullData");
-                }, (error) => this.disconnectHandler(error))
+                }, (error) => this.disconnectHandler(error));
             })
             .catch(error => console.error(error));
     }
