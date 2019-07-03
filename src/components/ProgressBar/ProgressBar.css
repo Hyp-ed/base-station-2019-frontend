@@ -4,12 +4,29 @@
     margin: 0px 40px 0px;
 }
 
+.progress-bar-fill {
+    background: #a30606;
+    position: absolute;
+    top: 0px;
+    height: 10px;
+    width: 15px
+}
+
+.progress-bar-fill.fill-1 {
+    left: 0%;
+    transform: translate(-100%, 0);
+}
+
+.progress-bar-fill.fill-2 {
+    left: 100%;
+}
+
 .progress-bar-background {
     background: #a30606;
     height: 10px;
 }
 
-.progress-bar-fill {
+.progress-bar-indicator {
     position: absolute;
     top: 0px;
     transform: translate(-50%, 0);
