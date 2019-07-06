@@ -63,10 +63,16 @@
     ],
     "emBrakesIndicators": [
         {
-            "indicatorName": "RETRACTED FRONT"
+            "indicatorName": "1"
         },
         {
-            "indicatorName": "RETRACTED REAR"
+            "indicatorName": "2"
+        },
+        {
+            "indicatorName": "3"
+        },
+        {
+            "indicatorName": "4"
         }
     ],
     "progressBarMax": 1250

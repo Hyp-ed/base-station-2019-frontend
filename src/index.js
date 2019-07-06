@@ -83,7 +83,7 @@ class App extends React.Component {
                 newGauges.push({...gauges[i], value: Math.round(values[i])});
             }
             else {
-                newGauges.push({...gauges[i]});
+                newGauges.push(gauges[i]);
             }
         }
 
@@ -99,7 +99,7 @@ class App extends React.Component {
                 newIndicators.push({...indicators[i], operational: statuses[i]});
             }
             else {
-                newIndicators.push({...indicators[i]});
+                newIndicators.push(indicators[i]);
             }
         }
 
@@ -160,7 +160,7 @@ class App extends React.Component {
             : this.getIndicators(config['imuIndicators'], this.convertImuStatuses(this.state.podData.sensors.imu));
         const emBrakesIndicators = typeof this.state.podData === 'undefined'
             ? config['emBrakesIndicators']
-            : this.getIndicators(config['emBrakesIndicators'], this.convertEmBrakesStatuses(this.state.podData.emergencyBrakes));
+            : this.getIndicators(config['emBrakesIndicators'], this.convertEmBrakesStatuses(this.state.podData.emergencyBrakes.brakes));
         const highPowerBatteryValues = typeof this.state.podData === 'undefined'
             ? {}
             : this.state.podData.batteries.highPowerBatteries;
