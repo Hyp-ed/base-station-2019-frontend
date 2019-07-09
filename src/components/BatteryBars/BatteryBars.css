@@ -7,7 +7,7 @@
     font-family: 'Lato';
     font-weight: 300;
     color: #ffffff;
-    margin-bottom: 17px;
+    margin-bottom: 10px;
 }
 
 .bar-container {
@@ -16,5 +16,5 @@
 }
 
 .bar-container-item:not(:last-child) {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
