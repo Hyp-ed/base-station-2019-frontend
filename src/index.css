@@ -55,7 +55,6 @@ h1, h2 {
     grid-column: 1 / 4;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
 }
 
 @media (min-width: 768px) {
