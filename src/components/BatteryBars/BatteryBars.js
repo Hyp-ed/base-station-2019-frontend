@@ -4,8 +4,6 @@ import React from 'react';
 import Bar from '../Bar/Bar';
 
 function BatteryBars(props) {
-    console.log(props.ranges[2]["Temperature"][1]);
-
     return (
         <div className="bar-container-root">
             <h1 className="bar-container-title">{props.title}</h1>
