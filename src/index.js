@@ -176,6 +176,14 @@ class App extends React.Component {
                     podState={podState}
                     progressBarMax={config['progressBarMax']}
                 />
+                <div id="swith-box">
+                    <h3>Light Mode</h3>
+                    <label class="switch">
+                        <input type="checkbox"/>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                
                 <div id="gauges">
                     <div id="velocity-gauge">
                         <GaugeContainer
