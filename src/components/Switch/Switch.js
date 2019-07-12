@@ -1,6 +1,5 @@
 import './Switch.css';
 import React from 'react';
-import Bar from '../Bar/Bar'
 
 function Switch(props){
     document.addEventListener('DOMContentLoaded', function () {
