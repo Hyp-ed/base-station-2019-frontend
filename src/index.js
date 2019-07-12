@@ -9,6 +9,7 @@ import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 import BatteryBars from './components/BatteryBars/BatteryBars';
 import ButtonContainer from './components/ButtonContainer/ButtonContainer';
 import IndicatorContainer from './components/IndicatorContainer/IndicatorContainer';
+import Switch from './components/Switch/Switch';
 
 class App extends React.Component {
     constructor(props) {
@@ -176,14 +177,6 @@ class App extends React.Component {
                     podState={podState}
                     progressBarMax={config['progressBarMax']}
                 />
-                <div id="swith-box">
-                    <h3>Light Mode</h3>
-                    <label class="switch">
-                        <input type="checkbox"/>
-                        <span class="slider"></span>
-                    </label>
-                </div>
-                
                 <div id="gauges">
                     <div id="velocity-gauge">
                         <GaugeContainer
@@ -234,6 +227,11 @@ class App extends React.Component {
                     <IndicatorContainer
                         title='EMERGENCY BRAKES'
                         indicators={emBrakesIndicators}
+                    />
+                </div>
+                <div id="switch-box">
+                    <Switch
+                        title='DARK'
                     />
                 </div>
                 <div id="buttons">
