@@ -80,13 +80,13 @@
             "Charge": [20,100]
         },
         {
-            "Voltage": [17.5,29.4]
+            "Voltage": [100,129.6]
         },
         {
-            "Temperature": [10,60]
+            "Temperature": [10,65]
         },
         {
-            "Current": [5,50]
+            "Current": [0,350]
         }
     ],
     "LPBatteryRanges": [

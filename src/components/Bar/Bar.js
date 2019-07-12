@@ -3,11 +3,21 @@ import './Bar.css';
 import React from 'react';
 
 function Bar(props) {
+    const barColor = 
+        props.value > props.min 
+        ? "#ffffff"
+        : "#a31606";
+
     const indicatorStyle = {
+        backgroundColor: `${barColor}`,
         width: `${Math.min(100,Math.max(0,
-            (props.value - props.min)/(props.max - props.min)*100
+            props.value/props.max*100
         ))}%` // min/max to clamp percentage num in [0, 100]`
     };
+
+    const bufferStyle = {
+        width: `${(props.min/props.max)*100}%`
+    }
     
     return (
         <div className="bar-root">
@@ -15,6 +25,7 @@ function Bar(props) {
             <div>
                 <div className="bar background">
                     <div className="bar fill" style={indicatorStyle}></div>
+                    <div className="bar buffer" style={bufferStyle}></div>
                 </div>
             </div>
             <div className="bar value">
