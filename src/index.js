@@ -194,20 +194,20 @@ class App extends React.Component {
                         values={highPowerBatteryValues[0]}
                     />
                     <BatteryBars
-                        title='HP BATTERY 2'
-                        values={highPowerBatteryValues[1]}
-                    />
-                    <BatteryBars
-                        title='HP BATTERY 3'
-                        values={highPowerBatteryValues[2]}
-                    />
-                    <BatteryBars
                         title='LP BATTERY 1'
                         values={lowPowerBatteryValues[0]}
                     />
                     <BatteryBars
+                        title='HP BATTERY 2'
+                        values={highPowerBatteryValues[1]}
+                    />
+                    <BatteryBars
                         title='LP BATTERY 2'
                         values={lowPowerBatteryValues[1]}
+                    />
+                    <BatteryBars
+                        title='HP BATTERY 3'
+                        values={highPowerBatteryValues[2]}
                     />
                     <BatteryBars
                         title='LP BATTERY 3'

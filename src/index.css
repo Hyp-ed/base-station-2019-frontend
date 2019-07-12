@@ -12,7 +12,7 @@ h1, h2 {
     grid-template-columns: 430px 380px auto;
     grid-template-rows: 90px 190px auto;
     grid-gap: 25px 5px;
-    margin: 10px auto;
+    margin: auto;
 }
 
 @media (min-width: 768px) {
