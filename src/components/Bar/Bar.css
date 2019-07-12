@@ -26,7 +26,6 @@
 }
 
 .bar.fill {
-    position: absolute;
     top: 0px;
     width: 150px;
     background-color: #a30606;

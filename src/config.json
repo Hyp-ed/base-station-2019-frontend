@@ -75,5 +75,34 @@
             "indicatorName": "4"
         }
     ],
+    "HPBatteryRanges": [
+        {
+            "Charge": [20,100]
+        },
+        {
+            "Voltage": [17.5,29.4]
+        },
+        {
+            "Temperature": [10,60]
+        },
+        {
+            "Current": [5,50]
+        }
+    ],
+    "LPBatteryRanges": [
+        {
+            "Charge": [20,100]
+        },
+        {
+            "Voltage": [17.5,29.4]
+        },
+        {
+            "Temperature": [10,60]
+        },
+        {
+            "Current": [5,50]
+        }
+    ],
     "progressBarMax": 1250
+    
 }

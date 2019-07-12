@@ -3,12 +3,17 @@ import './Bar.css';
 import React from 'react';
 
 function Bar(props) {
+    const indicatorStyle = {
+        width: `${Math.min(100,Math.max(0,(props.value / props.max)*100))}%` // min/max to clamp percentage num in [0, 100]`
+    };
+    
     return (
         <div className="bar-root">
             <h2 className="bar-name">{props.name}</h2>
             <div>
-                <div className="bar background"></div>
-                <div className="bar fill"></div>
+                <div className="bar background">
+                    <div className="bar fill" style={indicatorStyle}></div>
+                </div>
             </div>
             <div className="bar value">
                 <h2 className="bar-value-text">{props.value}</h2>
