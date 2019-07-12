@@ -8,7 +8,7 @@ function Bar(props) {
             (props.value - props.min)/(props.max - props.min)*100
         ))}%` // min/max to clamp percentage num in [0, 100]`
     };
-    
+
     return (
         <div className="bar-root">
             <h2 className="bar-name">{props.name}</h2>
