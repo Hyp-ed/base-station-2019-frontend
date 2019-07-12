@@ -9,6 +9,10 @@ function Switch(props){
         const logoDark = document.getElementById('logoDark');
         const logoLight = document.getElementById('logo');
         const initHeader = document.getElementById('initHeader');
+        const barValues =  document.getElementsByClassName("bar-value-text");
+        const gaugeValuesBackground = document.getElementsByClassName("inset");
+        let colour;
+        let colourGuageBackground;
         checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
             document.documentElement.classList.toggle('light-mode');
@@ -17,11 +21,8 @@ function Switch(props){
             initHeader.style.visibility = 'hidden';
             document.getElementById("curMode").innerHTML = "LIGHT MODE";
             document.getElementById("curModeHeader").style.color="black";
-            const items =  document.getElementsByClassName("bar-value-text")
-            for(let i = 0; i < items.length; ++i){
-                document.getElementsByClassName("bar-value-text")[i].style.color="#0f1d3a"
-            }
-            //document.getElementsByClassName("bar-value-text").style.color="black";
+            colour = "#0f1d3a"
+            colourGuageBackground = "#ffffff"
         } else {
             document.documentElement.classList.remove('light-mode');
             logoDark.style.visibility = 'hidden';
@@ -29,12 +30,15 @@ function Switch(props){
             document.getElementById("curMode").innerHTML = "DARK MODE";
             document.getElementById("curModeHeader").style.color="white";
             console.log(document.getElementById("bar-value-text"));
-            const items =  document.getElementsByClassName("bar-value-text")
-            for(let i = 0; i < items.length; ++i){
-                document.getElementsByClassName("bar-value-text")[i].style.color="#ffffff;"
-            }
-            //document.getElementById("bar-value-text").style.color="white";
+            colour = "#ffffff"
+            colourGuageBackground = "#0f1d3a"
           }
+        for(let i = 0; i < barValues.length; ++i){
+            barValues[i].style.color=colour
+        }
+        for(let i = 0; i < gaugeValuesBackground.length; ++i){
+            gaugeValuesBackground[i].style.backgroundColor=colourGuageBackground
+        }
         });
     });
     return(
