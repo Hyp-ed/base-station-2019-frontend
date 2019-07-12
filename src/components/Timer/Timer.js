@@ -20,7 +20,7 @@ class Timer extends React.Component {
 
         this.timer = setInterval(() => {
             this.setState({
-                runningTime: Date.now() - startTime
+                runningTime: ((Date.now() - startTime)/1000).toFixed(3)
             });
         }, 10);
     }
@@ -51,9 +51,11 @@ class Timer extends React.Component {
         const runningTime = this.state.runningTime;
 
         return (
-            <p className='timer'>{runningTime}</p>
+            <p className='timer'>{runningTime}s</p>
         );
     }
 }
+
+
 
 export default Timer;
