@@ -54,7 +54,7 @@ h1, h2 {
 #buttons {
     grid-column: 1 / 4;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     align-items: flex-end;
 }
 
