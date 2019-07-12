@@ -2,8 +2,6 @@
     display: flex;
     justify-content: flex-end;
     grid-column: 1 / 4;
-    width: 700px;
-    margin-left: 120px;
 }
 
 .button-container-button {
