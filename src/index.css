@@ -1,12 +1,17 @@
 body {
     background-color: #0f1d3a;
 }
-
+.light-mode body{
+    background-color: #ffffff;
+}
 h1, h2 {
     color: #ffffff;
     margin: 0px;
 }
-
+.light-mode h1, h2{
+    color: #0f1d3a;
+    margin-bottom: 20px;
+}
 .wrapper {
     display: grid;
     grid-template-columns: 430px 380px auto;
@@ -56,7 +61,7 @@ h1, h2 {
 }
 
 #swith-box{
-
+    color: white; 
 }
 
 @media (min-width: 768px) {
