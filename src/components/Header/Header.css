@@ -55,3 +55,8 @@
 #logo {
     width: 20%;
 }
+#logoDark{
+    position: absolute;
+    width: 15%;
+    visibility: hidden;
+}
