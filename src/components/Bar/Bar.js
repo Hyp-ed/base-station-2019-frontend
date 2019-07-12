@@ -4,7 +4,9 @@ import React from 'react';
 
 function Bar(props) {
     const indicatorStyle = {
-        width: `${Math.min(100,Math.max(0,(props.value / props.max)*100))}%` // min/max to clamp percentage num in [0, 100]`
+        width: `${Math.min(100,Math.max(0,
+            (props.value - props.min)/(props.max - props.min)*100
+        ))}%` // min/max to clamp percentage num in [0, 100]`
     };
     
     return (

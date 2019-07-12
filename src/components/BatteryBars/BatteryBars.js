@@ -23,7 +23,7 @@ function BatteryBars(props) {
                         unit='V'
                         value={props.values.voltage}
                         max={props.ranges[1]["Voltage"][1]}
-                        max={props.ranges[1]["Voltage"][0]}
+                        min={props.ranges[1]["Voltage"][0]}
                     />
                 </div>
                 <div className="bar-container-item">
