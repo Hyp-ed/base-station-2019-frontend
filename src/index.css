@@ -39,7 +39,7 @@ h1, h2 {
 
 #battery-flexbox {
     grid-column: 2 / 4;
-    grid-row: 2 / 3;
+    grid-row: 2 / 4;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -53,8 +53,6 @@ h1, h2 {
 
 #buttons {
     grid-column: 1 / 4;
-    display: flex;
-    justify-content: flex-end;
 }
 
 @media (min-width: 768px) {
