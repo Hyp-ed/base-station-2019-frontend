@@ -21,14 +21,27 @@
 }
 
 .bar.background {
+    position: relative;
     width: 180px;
     background-color: #3B414B;
 }
 
 .bar.fill {
+    position: absolute;
     top: 0px;
     width: 150px;
-    background-color: #a30606;
+}
+
+.bar.buffer {
+   background: repeating-linear-gradient(
+        -45deg,
+        white,
+        white 10px,
+        gray 10px,
+        gray 20px);
+    position: absolute;
+    background-color: #707070;
+    opacity: 0.1;
 }
 
 .bar.value {
