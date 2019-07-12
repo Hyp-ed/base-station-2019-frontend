@@ -13,8 +13,8 @@ function BatteryBars(props) {
                         name='CHARGE'
                         unit='%'
                         value={props.values.charge}
-                        max={props.ranges[0]["Charge"][1]}
-                        min={props.ranges[0]["Charge"][0]}
+                        min={props.ranges["Charge"]["min"]}
+                        max={props.ranges["Charge"]["max"]}
                     />
                 </div>
                 <div className="bar-container-item">
@@ -22,8 +22,8 @@ function BatteryBars(props) {
                         name='VOLTAGE'
                         unit='V'
                         value={props.values.voltage}
-                        max={props.ranges[1]["Voltage"][1]}
-                        min={props.ranges[1]["Voltage"][0]}
+                        min={props.ranges["Voltage"]["min"]}
+                        max={props.ranges["Voltage"]["max"]}
                     />
                 </div>
                 <div className="bar-container-item">
@@ -31,8 +31,8 @@ function BatteryBars(props) {
                         name='TEMPERATURE'
                         unit='&deg;'
                         value={props.values.temperature}
-                        max={props.ranges[2]["Temperature"][1]}
-                        min={props.ranges[2]["Temperature"][0]}
+                        min={props.ranges["Temperature"]["min"]}
+                        max={props.ranges["Temperature"]["max"]}
                     />
                 </div>
                 <div className="bar-container-item">
@@ -40,8 +40,8 @@ function BatteryBars(props) {
                         name='CURRENT'
                         unit='A'
                         value={props.values.current}
-                        max={props.ranges[3]["Current"][1]}
-                        min={props.ranges[3]["Current"][0]}
+                        min={props.ranges["Current"]["min"]}
+                        max={props.ranges["Current"]["max"]}
                     />
                 </div>
             </div>

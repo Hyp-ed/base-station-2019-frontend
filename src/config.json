@@ -75,33 +75,41 @@
             "indicatorName": "4"
         }
     ],
-    "HPBatteryRanges": [
-        {
-            "Charge": [20,100]
+    "HPBatteryRanges": {
+        "Charge": {
+            "min": 20,
+            "max": 100
         },
-        {
-            "Voltage": [100,129.6]
+        "Voltage": {
+            "min": 100,
+            "max": 129.6
         },
-        {
-            "Temperature": [10,65]
+        "Temperature": {
+            "min": 10,
+            "max": 65
         },
-        {
-            "Current": [0,350]
+        "Current": {
+            "min": 0,
+            "max": 350
         }
-    ],
-    "LPBatteryRanges": [
-        {
-            "Charge": [20,100]
+    },
+    "LPBatteryRanges": {
+        "Charge": {
+            "min": 20,
+            "max": 100
         },
-        {
-            "Voltage": [17.5,29.4]
+        "Voltage": {
+            "min": 17.5,
+            "max": 29.4
         },
-        {
-            "Temperature": [10,60]
+        "Temperature": {
+            "min": 10,
+            "max": 60
         },
-        {
-            "Current": [5,50]
+        "Current": {
+            "min": 5,
+            "max": 50
         }
-    ],
+    },
     "progressBarMax": 1250
 }
