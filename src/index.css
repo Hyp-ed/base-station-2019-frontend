@@ -1,17 +1,11 @@
 body {
     background-color: #0f1d3a;
 }
+
 .light-mode body{
     background-color: #ffffff;
 }
-h1, h2 {
-    color: #ffffff;
-    margin: 0px;
-}
-.light-mode h1, h2{
-    color: #0f1d3a;
-    margin-bottom: 20px;
-}
+
 .wrapper {
     display: grid;
     grid-template-columns: 430px 380px auto;
@@ -95,4 +89,3 @@ h1, h2 {
        url('./fonts/lato-v15-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('./fonts/lato-v15-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-
