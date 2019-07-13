@@ -82,7 +82,7 @@ class App extends React.Component {
 
         for (let i = 0; i < gauges.length; i++) {
             if (typeof values[i] !== 'undefined') {
-                newGauges.push({...gauges[i], value: Math.round(values[i])});
+                newGauges.push({...gauges[i], value: Math.round(values[i] * 100) / 100});
             }
             else {
                 newGauges.push(gauges[i]);
@@ -142,12 +142,22 @@ class App extends React.Component {
         const podState = typeof this.state.podData === 'undefined'
             ? ''
             : this.state.podData.stateMachine.currentState;
+
+        if (typeof this.state.podData !== 'undefined' && typeof this.state.podData.navigation.velocity !== 'undefined') {
+            var velocity = this.state.podData.navigation.velocity * (3.6 / 1.609);
+        }
+
         const velocityGauge = typeof this.state.podData === 'undefined'
             ? config['velocityGauge']
-            : this.getGauges(config['velocityGauge'], [this.state.podData.navigation.velocity]);
+            : this.getGauges(config['velocityGauge'], [velocity]);
+
+        if (typeof this.state.podData !== 'undefined' && typeof this.state.podData.navigation.acceleration !== 'undefined') {
+            var acceleration = this.state.podData.navigation.acceleration * 0.10197;
+        }
+
         const accelerationGauge = typeof this.state.podData === 'undefined'
             ? config['accelerationGauge']
-            : this.getGauges(config['accelerationGauge'], [this.state.podData.navigation.acceleration]);
+            : this.getGauges(config['accelerationGauge'], [acceleration]);
         const moduleIndicators = typeof this.state.podData === 'undefined'
             ? config['moduleIndicators']
             : this.getIndicators(config['moduleIndicators'], [

@@ -3,18 +3,18 @@
         {
             "key": "velocityGauge",
             "size": 140,
-            "unit": "m/s",
+            "unit": "MPH",
             "min": 0,
-            "max": 250
+            "max": 560
         }
     ],
     "accelerationGauge": [
         {
             "key": "accelerationGauge",
             "size": 100,
-            "unit": "m/s\u00B2",
-            "min": -50,
-            "max": 50
+            "unit": "g",
+            "min": -5,
+            "max": 5
         }
     ],
     "motorGauges": [
