@@ -167,6 +167,8 @@ class App extends React.Component {
         const lowPowerBatteryValues = typeof this.state.podData === 'undefined'
             ? {}
             : this.state.podData.batteries.lowPowerBatteries;
+        const highPowerBatteryRanges = config["HPBatteryRanges"];
+        const lowPowerBatteryRanges = config["LPBatteryRanges"];
 
         return (
             <div className="wrapper">
@@ -192,26 +194,32 @@ class App extends React.Component {
                     <BatteryBars
                         title='HP BATTERY 1'
                         values={highPowerBatteryValues[0]}
+                        ranges={highPowerBatteryRanges}
                     />
                     <BatteryBars
                         title='LP BATTERY 1'
                         values={lowPowerBatteryValues[0]}
+                        ranges={lowPowerBatteryRanges}
                     />
                     <BatteryBars
                         title='HP BATTERY 2'
                         values={highPowerBatteryValues[1]}
+                        ranges={highPowerBatteryRanges}
                     />
                     <BatteryBars
                         title='LP BATTERY 2'
                         values={lowPowerBatteryValues[1]}
+                        ranges={lowPowerBatteryRanges}
                     />
                     <BatteryBars
                         title='HP BATTERY 3'
                         values={highPowerBatteryValues[2]}
+                        ranges={highPowerBatteryRanges}
                     />
                     <BatteryBars
                         title='LP BATTERY 3'
                         values={lowPowerBatteryValues[2]}
+                        ranges={lowPowerBatteryRanges}
                     />
                 </div>
                 <div id="indicators">

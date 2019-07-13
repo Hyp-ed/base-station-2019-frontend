@@ -13,6 +13,8 @@ function BatteryBars(props) {
                         name='CHARGE'
                         unit='%'
                         value={props.values.charge}
+                        min={props.ranges["Charge"]["min"]}
+                        max={props.ranges["Charge"]["max"]}
                     />
                 </div>
                 <div className="bar-container-item">
@@ -20,6 +22,8 @@ function BatteryBars(props) {
                         name='VOLTAGE'
                         unit='V'
                         value={props.values.voltage}
+                        min={props.ranges["Voltage"]["min"]}
+                        max={props.ranges["Voltage"]["max"]}
                     />
                 </div>
                 <div className="bar-container-item">
@@ -27,6 +31,8 @@ function BatteryBars(props) {
                         name='TEMPERATURE'
                         unit='&deg;'
                         value={props.values.temperature}
+                        min={props.ranges["Temperature"]["min"]}
+                        max={props.ranges["Temperature"]["max"]}
                     />
                 </div>
                 <div className="bar-container-item">
@@ -34,6 +40,8 @@ function BatteryBars(props) {
                         name='CURRENT'
                         unit='A'
                         value={props.values.current}
+                        min={props.ranges["Current"]["min"]}
+                        max={props.ranges["Current"]["max"]}
                     />
                 </div>
             </div>
