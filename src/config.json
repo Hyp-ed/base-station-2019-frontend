@@ -84,6 +84,14 @@
             "min": 100,
             "max": 129.6
         },
+        "HighFringeCell": {
+            "min": 2.7,
+            "max": 3.6
+        },
+        "LowFringeCell": {
+            "min": 2.7,
+            "max": 3.6
+        },
         "Temperature": {
             "min": 10,
             "max": 65
