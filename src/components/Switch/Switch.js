@@ -10,9 +10,13 @@ function Switch(props){
         const initHeader = document.getElementById('initHeader');
         const barValues =  document.getElementsByClassName("bar-value-text");
         const gaugeValuesBackground = document.getElementsByClassName("inset");
-        //const guageInners = document.getElementsByClassName(circleClassName);
+        const guageInners = document.getElementsByClassName("clip half");
+        const guageInnersFull = document.getElementsByClassName("clip full");
+        const guageBackground = document.getElementsByClassName("gauge-background");
+        const guageWTFISGOINGON = document.getElementsByClassName("circle out-of-bounds");
         let colour;
         let colourGuageBackground;
+        let colourGuageFull;
         checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
             console.log(circleClassName);
@@ -24,6 +28,7 @@ function Switch(props){
             document.getElementById("curModeHeader").style.color="black";
             colour = "#0f1d3a"
             colourGuageBackground = "#ffffff"
+            colourGuageFull = "#BABABA"
         } else {
             document.documentElement.classList.remove('light-mode');
             logoDark.style.visibility = 'hidden';
@@ -33,12 +38,19 @@ function Switch(props){
             console.log(document.getElementById("bar-value-text"));
             colour = "#ffffff"
             colourGuageBackground = "#0f1d3a"
+            colourGuageFull = "#3B414B"
           }
         for(let i = 0; i < barValues.length; ++i){
-            barValues[i].style.color=colour
+            barValues[i].style.color=colour;
         }
         for(let i = 0; i < gaugeValuesBackground.length; ++i){
-            gaugeValuesBackground[i].style.backgroundColor=colourGuageBackground
+            gaugeValuesBackground[i].style.backgroundColor=colourGuageBackground;
+        }
+        for(let i = 0; i < guageInners.length; ++i){
+            guageInners[i].firstChild.style.backgroundColor=colour;
+            guageInnersFull[i].firstChild.style.backgroundColor=colour;
+            guageBackground[i].style.backgroundColor=colourGuageFull;
+            guageWTFISGOINGON[i].style.backgroundColor="#a30606";
         }
         });
     });
