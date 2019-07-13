@@ -1,7 +1,6 @@
 import './Switch.css';
 import React from 'react';
-import Header from '../Header/Header';
-import Bar from '../Bar/Bar';
+import {Gauge, circleClassName} from '../Gauge/Gauge';
 
 function Switch(props){
     document.addEventListener('DOMContentLoaded', function () {
@@ -11,10 +10,12 @@ function Switch(props){
         const initHeader = document.getElementById('initHeader');
         const barValues =  document.getElementsByClassName("bar-value-text");
         const gaugeValuesBackground = document.getElementsByClassName("inset");
+        //const guageInners = document.getElementsByClassName(circleClassName);
         let colour;
         let colourGuageBackground;
         checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
+            console.log(circleClassName);
             document.documentElement.classList.toggle('light-mode');
             logoDark.style.visibility = 'visible';
             logoLight.style.visibility = 'hidden';
