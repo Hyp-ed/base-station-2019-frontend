@@ -16,32 +16,32 @@
     margin-bottom: 0px;
 }
 
+.bar-name.out-of-bounds {
+    color: #a30606;
+}
+
 .bar {
     height: 23px;
 }
 
-.bar.background {
+.bar.container {
     position: relative;
     width: 180px;
+}
+
+.bar.background {
+    width: 100%;
     background-color: #3B414B;
 }
 
 .bar.fill {
     position: absolute;
     top: 0px;
-    width: 150px;
+    background-color: #ffffff;
 }
 
-.bar.buffer {
-   background: repeating-linear-gradient(
-        -45deg,
-        white,
-        white 10px,
-        gray 10px,
-        gray 20px);
-    position: absolute;
-    background-color: #707070;
-    opacity: 0.1;
+.bar.fill.out-of-bounds {
+    background-color: #a30606;
 }
 
 .bar.value {
@@ -58,6 +58,10 @@
     color: #ffffff;
     text-align: right;
     margin-bottom: 0px;
+}
+
+.bar-value-text.out-of-bounds {
+    color: #a30606;
 }
 
 .bar-value-unit {
