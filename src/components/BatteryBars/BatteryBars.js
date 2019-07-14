@@ -29,7 +29,7 @@ function BatteryBars(props) {
                 <div className="bar-container-item">
                     <Bar
                         name='TEMPERATURE'
-                        unit='&deg;'
+                        unit='&deg;C'
                         value={props.values.temperature}
                         min={props.ranges["Temperature"]["min"]}
                         max={props.ranges["Temperature"]["max"]}
