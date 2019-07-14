@@ -51,7 +51,7 @@ class Timer extends React.Component {
         const runningTime = this.state.runningTime;
 
         return (
-            <p className='timer'>{(runningTime / 1000).toFixed(3)}s</p>
+            <p className='timer'>{(runningTime / 1000).toFixed(2)}s</p>
         );
     }
 }
