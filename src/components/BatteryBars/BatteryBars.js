@@ -6,7 +6,7 @@ import Bar from '../Bar/Bar';
 function BatteryBars(props) {
     return (
         <div className="bar-container-root">
-            <h1 className="bar-container-title">{props.title}</h1>
+            <h1 className="bar-container-title title">{props.title}</h1>
             <div className="bar-container">
                 <div className="bar-container-item">
                     <Bar

@@ -7,6 +7,20 @@ h1, h2 {
     margin: 0px;
 }
 
+.title {
+    font-size: 17px;
+    font-family: 'Lato';
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 15px;
+    font-family: 'Lato';
+    font-weight: 300;
+    color: #707070;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: 430px 380px auto;
