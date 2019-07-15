@@ -45,7 +45,7 @@
 
 .arrow-up {
     margin-top: 50%;
-    margin-left: 33%;
+    margin-left: 40%; /* idk why 50% doesn't work, just eyeballed this */
     width: 0;
     height: 0;
     border-left: 0.2em solid transparent;
