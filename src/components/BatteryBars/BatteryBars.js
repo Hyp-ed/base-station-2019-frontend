@@ -44,6 +44,8 @@ function BatteryBars(props) {
                         max={props.ranges["Current"]["max"]}
                     />
                 </div>
+                {props.lowVoltageCell}
+                {props.highVoltageCell}
             </div>
         </div>
     );

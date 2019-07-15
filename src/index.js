@@ -7,6 +7,7 @@ import config from './config.json'
 import Header from './components/Header/Header';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 import BatteryBars from './components/BatteryBars/BatteryBars';
+import HPBatteryBars from './components/HPBatteryBars/HPBatteryBars';
 import ButtonContainer from './components/ButtonContainer/ButtonContainer';
 import IndicatorContainer from './components/IndicatorContainer/IndicatorContainer';
 
@@ -191,25 +192,25 @@ class App extends React.Component {
                     />
                 </div>
                 <div id="battery-flexbox">
+                    <HPBatteryBars
+                        title='HP BATTERY 1'
+                        values={highPowerBatteryValues[0]}
+                        ranges={highPowerBatteryRanges}
+                    />
+                    <HPBatteryBars
+                        title='HP BATTERY 2'
+                        values={highPowerBatteryValues[1]}
+                        ranges={highPowerBatteryRanges}
+                    />
                     <BatteryBars
                         title='LP BATTERY 1'
                         values={lowPowerBatteryValues[0]}
                         ranges={lowPowerBatteryRanges}
                     />
                     <BatteryBars
-                        title='HP BATTERY 1'
-                        values={highPowerBatteryValues[0]}
-                        ranges={highPowerBatteryRanges}
-                    />
-                    <BatteryBars
                         title='LP BATTERY 2'
                         values={lowPowerBatteryValues[1]}
                         ranges={lowPowerBatteryRanges}
-                    />
-                    <BatteryBars
-                        title='HP BATTERY 2'
-                        values={highPowerBatteryValues[1]}
-                        ranges={highPowerBatteryRanges}
                     />
                     <BatteryBars
                         title='LP BATTERY 3'
