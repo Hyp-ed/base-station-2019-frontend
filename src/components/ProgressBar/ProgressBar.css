@@ -34,3 +34,22 @@
     height: 10px;
     width: 30px
 }
+
+.progress-bar-value {
+    text-align: center;
+    font-family: Lato;
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.arrow-up {
+    margin-top: 50%;
+    margin-left: 40%; /* idk why 50% doesn't work, just eyeballed this */
+    width: 0;
+    height: 0;
+    border-left: 0.2em solid transparent;
+    border-right: 0.2em solid transparent;
+    border-top: 0.2em solid transparent;
+    border-bottom: 0.2em solid #ffffff;
+}
