@@ -134,7 +134,7 @@ class App extends React.Component {
     render() {
         const stompClient = this.state.stompClient;
         const connectedToPod = this.state.connectedToPod;
-        const podDistance = typeof this.state.podData === 'undefined'
+        const podDistance = typeof this.state.podData === 'undefined' || typeof this.state.podData.navigation.distance === 'undefined'
             ? 0
             : this.state.podData.navigation.distance;
         const podState = typeof this.state.podData === 'undefined'
