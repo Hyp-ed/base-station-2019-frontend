@@ -1,0 +1,159 @@
+.pod-temperature{
+  display: block;
+  /* height: 10px; */
+  -webkit-transition: all .5s;
+  margin: auto;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.pod-temperature span{
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.pod-thermometer:hover{
+  transform: scale(1.1);
+}
+
+.pod-thermometer{
+  margin-top: 20px;
+}
+
+body {
+  font-family: Helvetica;
+}
+
+/* color */
+
+/* class */
+
+.pod-thermometer .glass{
+  background-color: #3B414B;
+}
+
+.pod-thermometer .liquid{
+  background: #a30606;
+}
+
+.pod-thermometer .filler-cont {
+
+    border-radius: 100px 100px 0 0;
+    display: block;
+    height: 100px;
+    margin: auto;
+    padding: 5px;
+    position: relative;
+    width: 10px;
+    bottom: 9px;
+}
+
+.pod-thermometer .actual-filler{
+  position: relative;
+  /* margin-bottom: 50px; */
+  height: 100%;
+  display: block;
+}
+
+.pod-thermometer .amount {
+    border-radius: 0px;
+    display: block;
+    width: 10px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 2;
+    height: 20%; /* temperature liquid - change this to increase or decrease the temperature indicator */
+}
+
+.f-max-temp, .c-max-temp{
+  top: 20%;
+}
+
+.f-min-temp, .c-min-temp{
+  top: 70%;
+}
+
+.min-boundary{
+  top: 75%;
+}
+
+.max-boundary{
+  top: 25%;
+}
+
+
+.fahrenheit{
+  position: absolute;
+  left: 28px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.celsius{
+  position: absolute;
+  right: 25px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.curr-temperature{
+  white-space: nowrap;
+  margin: auto;
+  text-align: center;
+  top: 38px;
+  position: absolute;
+  color: #ffffff;
+  left: -50%;
+  display: block;
+}
+
+.temp-separator{
+  color: #a30606;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: 900!important;
+  font-size: 16px!important;
+  display: inline;
+  vertical-align: middle;
+}
+
+.min-boundary, .max-boundary{
+  position: absolute;
+  height: 1px;
+  background-color: #ffffff;
+  width: 100%;
+  left: 0%;
+  z-index: 3;
+}
+
+.pod-thermometer strong{
+  display: block;
+  text-align: center;
+}
+
+.pod-thermometer .goal {
+  font-size: 30px;
+}
+
+.pod-thermometer .total {
+  font-size: 16px;
+  position: absolute;
+  right: 35px;
+}
+
+.pod-thermometer .bulb {
+  border-radius: 100px;
+  display: block;
+  height: 26px;
+  margin: auto;
+  padding: 5px;
+  position: relative;
+    top: -20px;
+  width: 26px;
+}
+.pod-thermometer .red-circle {
+  border-radius: 100px;
+  display: block;
+  height: 26px;
+  width: 26px;
+}
