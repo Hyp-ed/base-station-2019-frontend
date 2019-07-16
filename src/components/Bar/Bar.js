@@ -3,12 +3,17 @@ import './Bar.css';
 import React from 'react';
 
 function Bar(props) {
+    let cleanedValue = '-';
+    if (!isNaN(props.value)) {
+        cleanedValue = Math.round(props.value * 10) / 10;
+    }
+
     const barStyle = {
-        width: `${Math.min(100, Math.max(0, (props.value - props.min) / (props.max - props.min) * 100))}%` // min/max to clamp percentage num in [0, 100]`
+        width: `${Math.min(100, Math.max(0, (cleanedValue - props.min) / (props.max - props.min) * 100))}%` // min/max to clamp percentage num in [0, 100]`
     }
 
     let barClassName = '';
-    if (props.value < props.min || props.value > props.max) {
+    if (cleanedValue < props.min || cleanedValue > props.max) {
         barClassName = 'out-of-bounds';
     }
 
@@ -20,17 +25,13 @@ function Bar(props) {
                 <div className={`bar fill ${barClassName}`} style={barStyle}></div>
             </div>
             <div className="bar value">
-                <h2 className={`bar-value-text subtitle ${barClassName}`}>{props.value}</h2>
+                <h2 className={`bar-value-text subtitle ${barClassName}`}>{cleanedValue}</h2>
                 <div className="bar-value-unit">
                     <h2 className={`bar-value-text subtitle ${barClassName}`}>&nbsp;{props.unit}</h2>
                 </div>
             </div>
         </div>
     );
-}
-
-Bar.defaultProps = {
-    value: '-',
 }
 
 export default Bar;

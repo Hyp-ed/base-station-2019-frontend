@@ -21,7 +21,7 @@ function BatteryBars(props) {
                     <Bar
                         name='VOLTAGE'
                         unit='V'
-                        value={props.values.voltage}
+                        value={props.values.voltage / 10 /* convert from dV to V */ }
                         min={props.ranges["Voltage"]["min"]}
                         max={props.ranges["Voltage"]["max"]}
                     />
@@ -39,7 +39,7 @@ function BatteryBars(props) {
                     <Bar
                         name='CURRENT'
                         unit='A'
-                        value={props.values.current}
+                        value={props.values.current / 10 /* convert from dA to A */ }
                         min={props.ranges["Current"]["min"]}
                         max={props.ranges["Current"]["max"]}
                     />

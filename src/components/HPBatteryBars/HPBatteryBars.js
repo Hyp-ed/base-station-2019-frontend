@@ -9,7 +9,7 @@ function HPBatteryBars(props) {
             <Bar
                 name='LOW CELL'
                 unit='V'
-                value={props.values.lowVoltageCell}
+                value={props.values.lowVoltageCell / 1000 /* convert from mV to V */ }
                 min={props.ranges["LowFringeCell"]["min"]}
                 max={props.ranges["LowFringeCell"]["max"]}
             />
@@ -22,7 +22,7 @@ function HPBatteryBars(props) {
             <Bar
                 name='HIGH CELL'
                 unit='V'
-                value={props.values.highVoltageCell}
+                value={props.values.highVoltageCell / 1000 /* convert from mV to V */ }
                 min={props.ranges["HighFringeCell"]["min"]}
                 max={props.ranges["HighFringeCell"]["max"]}
             />
