@@ -30,7 +30,7 @@ function BatteryBars(props) {
                     <Bar
                         name='TEMPERATURE'
                         unit='&deg;C'
-                        value={props.values.temperature}
+                        value={props.values.averageTemperature}
                         min={props.ranges["Temperature"]["min"]}
                         max={props.ranges["Temperature"]["max"]}
                     />
@@ -44,6 +44,8 @@ function BatteryBars(props) {
                         max={props.ranges["Current"]["max"]}
                     />
                 </div>
+                {props.lowTemperature}
+                {props.highTemperature}
                 {props.lowVoltageCell}
                 {props.highVoltageCell}
             </div>
