@@ -10,6 +10,7 @@ import BatteryBars from './components/BatteryBars/BatteryBars';
 import HPBatteryBars from './components/HPBatteryBars/HPBatteryBars';
 import ButtonContainer from './components/ButtonContainer/ButtonContainer';
 import IndicatorContainer from './components/IndicatorContainer/IndicatorContainer';
+import PodTemperature from './components/PodTemperature/PodTemperature';
 
 class App extends React.Component {
     constructor(props) {
@@ -147,6 +148,9 @@ class App extends React.Component {
         const accelerationGauge = typeof this.state.podData === 'undefined'
             ? config['accelerationGauge']
             : this.getGauges(config['accelerationGauge'], [this.state.podData.navigation.acceleration]);
+        const podTemperature = typeof this.state.podData === 'undefined'
+            ? config['PodTemperature']
+            : this.PodTemperature(config['PodTemperature']);
         const moduleIndicators = typeof this.state.podData === 'undefined'
             ? config['moduleIndicators']
             : this.getIndicators(config['moduleIndicators'], [
@@ -189,6 +193,10 @@ class App extends React.Component {
                     <GaugeContainer
                         title='ACCELERATION'
                         gauges={accelerationGauge}
+                    />
+                    <PodTemperature
+                        title='TEMPERATURE'
+                        temp={podTemperature}
                     />
                 </div>
                 <div id="battery-flexbox">

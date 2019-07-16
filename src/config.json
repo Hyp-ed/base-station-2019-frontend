@@ -119,5 +119,10 @@
             "max": 50
         }
     },
+    "PodTemperature":{
+      "value" : 0,
+      "min"   : 10,
+      "max"   : 60
+    },
     "progressBarMax": 1250
 }

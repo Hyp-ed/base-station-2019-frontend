@@ -47,8 +47,8 @@ h1, h2 {
     grid-row: 2 / 3;
 }
 
-#velocity-gauge {
-    margin-right: 40px;
+#velocity-gauge, .gauge-container {
+    margin-right: 13.3px;
 }
 
 #battery-flexbox {
