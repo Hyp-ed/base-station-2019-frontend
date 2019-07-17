@@ -27,6 +27,8 @@
 }
 
 .progress-bar-indicator {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 0px;
     transform: translate(-50%, 0);
@@ -36,11 +38,13 @@
 }
 
 .progress-bar-value {
+    margin-top: 80%;
+    align-self: center;
+    position: absolute;
     text-align: center;
     font-family: Lato;
     font-size: 15px;
     color: #ffffff;
-    margin-bottom: 20px;
 }
 
 .arrow-up {
