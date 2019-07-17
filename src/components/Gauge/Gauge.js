@@ -2,7 +2,6 @@ import './Gauge.css';
 
 import React from 'react';
 let circleClassName = '';
-
 function Gauge(props) {
     let rotateValue = props.value < props.min
                       ? 0
@@ -13,7 +12,7 @@ function Gauge(props) {
     if (rotateValue > 340) {
         rotateValue = 340;
     }
-
+   
     let textClassName = '';
     if (props.value < props.min || props.value > props.max) {
         textClassName = 'out-of-bounds';
@@ -67,7 +66,7 @@ function Gauge(props) {
 }
 
 Gauge.defaultProps = {
-    value: '150',
+    value: '130',
 }
 
 export {Gauge, circleClassName}

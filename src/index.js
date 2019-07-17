@@ -9,7 +9,7 @@ import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 import BatteryBars from './components/BatteryBars/BatteryBars';
 import ButtonContainer from './components/ButtonContainer/ButtonContainer';
 import IndicatorContainer from './components/IndicatorContainer/IndicatorContainer';
-import Switch from './components/Switch/Switch';
+import {Switch} from './components/Switch/Switch';
 
 class App extends React.Component {
     constructor(props) {
