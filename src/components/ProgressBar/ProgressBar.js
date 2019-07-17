@@ -20,8 +20,4 @@ function ProgressBar(props) {
     );
 }
 
-ProgressBar.defaultProps = {
-    podDistance: 150.4,
-}
-
 export default ProgressBar;
