@@ -20,7 +20,6 @@ function Header(props) {
             />
             <Timer
                 podState={props.podState}
-                connectedToPod={props.connectedToPod}
             />
             <div className="pod-status">
                 <p className={`status-text connection-text ${connectionTextClassName}`} style={connectionTextStyle}>

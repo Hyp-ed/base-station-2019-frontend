@@ -6,24 +6,10 @@ body {
     background-color: #ffffff;
 }
 
-.title {
-    font-size: 17px;
-    font-family: 'Lato';
-    font-weight: 300;
-    color: #ffffff;
-}
-
-.subtitle {
-    font-size: 15px;
-    font-family: 'Lato';
-    font-weight: 300;
-    color: #707070;
-}
-
 .wrapper {
     display: grid;
     grid-template-columns: 430px 380px auto;
-    grid-template-rows: 90px 190px 320px auto;
+    grid-template-rows: 90px 190px auto;
     grid-gap: 25px 5px;
     margin: auto;
 }
@@ -55,9 +41,7 @@ body {
     grid-row: 2 / 4;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: space-between;
+    align-content: flex-start;
 }
 
 #indicators {
@@ -71,7 +55,7 @@ body {
 }
 
 #swith-box{
-    color: white;
+    color: white; 
 }
 
 @media (min-width: 768px) {

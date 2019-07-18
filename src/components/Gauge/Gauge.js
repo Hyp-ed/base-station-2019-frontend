@@ -71,7 +71,7 @@ function Gauge(props) {
 }
 
 Gauge.defaultProps = {
-    value: '-',
+    value: '12',
 }
 
-export default Gauge;
+export {Gauge, circleClassName}

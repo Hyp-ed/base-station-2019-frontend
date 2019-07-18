@@ -7,10 +7,9 @@ import config from './config.json'
 import Header from './components/Header/Header';
 import GaugeContainer from './components/GaugeContainer/GaugeContainer';
 import BatteryBars from './components/BatteryBars/BatteryBars';
-import HPBatteryBars from './components/HPBatteryBars/HPBatteryBars';
 import ButtonContainer from './components/ButtonContainer/ButtonContainer';
 import IndicatorContainer from './components/IndicatorContainer/IndicatorContainer';
-import Switch from './components/Switch/Switch';
+import {Switch} from './components/Switch/Switch';
 
 class App extends React.Component {
     constructor(props) {
@@ -136,7 +135,7 @@ class App extends React.Component {
     render() {
         const stompClient = this.state.stompClient;
         const connectedToPod = this.state.connectedToPod;
-        const podDistance = typeof this.state.podData === 'undefined' || typeof this.state.podData.navigation.distance === 'undefined'
+        const podDistance = typeof this.state.podData === 'undefined'
             ? 0
             : this.state.podData.navigation.distance;
         const podState = typeof this.state.podData === 'undefined'
@@ -169,8 +168,6 @@ class App extends React.Component {
         const lowPowerBatteryValues = typeof this.state.podData === 'undefined'
             ? {}
             : this.state.podData.batteries.lowPowerBatteries;
-        const highPowerBatteryRanges = config["HPBatteryRanges"];
-        const lowPowerBatteryRanges = config["LPBatteryRanges"];
 
         return (
             <div className="wrapper">
@@ -193,30 +190,29 @@ class App extends React.Component {
                     />
                 </div>
                 <div id="battery-flexbox">
-                    <HPBatteryBars
+                    <BatteryBars
                         title='HP BATTERY 1'
                         values={highPowerBatteryValues[0]}
-                        ranges={highPowerBatteryRanges}
-                    />
-                    <HPBatteryBars
-                        title='HP BATTERY 2'
-                        values={highPowerBatteryValues[1]}
-                        ranges={highPowerBatteryRanges}
                     />
                     <BatteryBars
                         title='LP BATTERY 1'
                         values={lowPowerBatteryValues[0]}
-                        ranges={lowPowerBatteryRanges}
+                    />
+                    <BatteryBars
+                        title='HP BATTERY 2'
+                        values={highPowerBatteryValues[1]}
                     />
                     <BatteryBars
                         title='LP BATTERY 2'
                         values={lowPowerBatteryValues[1]}
-                        ranges={lowPowerBatteryRanges}
+                    />
+                    <BatteryBars
+                        title='HP BATTERY 3'
+                        values={highPowerBatteryValues[2]}
                     />
                     <BatteryBars
                         title='LP BATTERY 3'
                         values={lowPowerBatteryValues[2]}
-                        ranges={lowPowerBatteryRanges}
                     />
                 </div>
                 <div id="indicators">
