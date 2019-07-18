@@ -8,11 +8,13 @@ function Switch(props){
         const logoDark = document.getElementById('logoDark');
         const logoLight = document.getElementById('logo');
         const initHeader = document.getElementById('initHeader');
-        const barValues =  document.getElementsByClassName("bar-value-text");
+        const BatteryBarValues =  document.getElementsByClassName("bar-value-text");
         const gaugeValuesBackground = document.getElementsByClassName("inset");
         const guageInners = document.getElementsByClassName("clip half");
         const guageInnersFull = document.getElementsByClassName("clip full");
         const guageBackground = document.getElementsByClassName("gauge-background");
+        const barValueArrow = document.getElementsByClassName("arrow-up");
+        const barValue = document.getElementsByClassName("progress-bar-value");
         const red_color = "rgb(163, 6, 6)";
         let curMode;
         let colour;
@@ -27,6 +29,8 @@ function Switch(props){
             initHeader.style.visibility = 'hidden';
             curMode = "LIGHT MODE";
             document.getElementById("curModeHeader").style.color="black";
+            barValue[0].style.color='#707070';
+            barValueArrow[0].style.borderBottom=' 0.2em solid #707070';
             colour = "#0f1d3a"
             colourGuageBackground = "#ffffff"
             colourGuageFull = "#BABABA"
@@ -36,6 +40,8 @@ function Switch(props){
             logoLight.style.visibility = 'visible';
             curMode = "DARK MODE"
             document.getElementById("curModeHeader").style.color="white";
+            barValue[0].style.color='#ffffff';
+            barValueArrow[0].style.borderBottom=' 0.2em solid #ffffff';
             colour = "#ffffff"
             colourGuageBackground = "#0f1d3a"
             colourGuageFull = "#3B414B"
@@ -43,8 +49,8 @@ function Switch(props){
         //Change current mode above light/dark switch
         document.getElementById("curMode").innerHTML = curMode;
         //Change Battery Colours
-        for(let i = 0; i < barValues.length; ++i){
-            barValues[i].style.color=colour;
+        for(let i = 0; i < BatteryBarValues.length; ++i){
+            BatteryBarValues[i].style.color=colour;
         }
         //Change Guage Colours
         for(let i = 0; i < gaugeValuesBackground.length; ++i){

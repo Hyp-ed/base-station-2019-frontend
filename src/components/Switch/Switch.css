@@ -9,7 +9,8 @@ h1, h2 {
     color: #0f1d3a;
     font-family: 'Lato';
     font-weight: 300;
-    font-size: 20px;
+    font-size: 17px;
+    margin: 1px;
 }
 .switch {
     position: relative;
