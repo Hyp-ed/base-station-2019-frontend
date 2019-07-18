@@ -40,6 +40,9 @@ class Timer extends React.Component {
         else if (this.props.podState !== prevProps.podState && this.props.podState !== 'ACCELERATING') {
             this.stopTimer();
         }
+        else if (this.props.connectedToPod !== prevProps.connectedToPod && this.props.connectedToPod === false) {
+            this.stopTimer();
+        }
     }
 
     // to prevent memory leak just in case Timer is removed from DOM
