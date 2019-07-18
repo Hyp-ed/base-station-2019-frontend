@@ -30,6 +30,7 @@
 .circle {
     background-color: #ffffff;
     border-radius: 50%;
+    transition: all .5s ease;
 }
 
 .circle.out-of-bounds {

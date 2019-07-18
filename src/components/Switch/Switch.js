@@ -20,6 +20,9 @@ function Switch(props){
         let colour;
         let colourGuageBackground;
         let colourGuageFull;
+
+        const red_color = "rgb(163, 6, 6)";
+
         checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
             document.documentElement.classList.toggle('light-mode');
@@ -49,11 +52,14 @@ function Switch(props){
             gaugeValuesBackground[i].style.backgroundColor=colourGuageBackground; //Changes inner circle of guages
         }
         for(let i = 0; i < guageInners.length; ++i){
-            //guageInners[i].firstChild.style.backgroundColor=colour;
-            //guageInnersFull[i].firstChild.style.backgroundColor=colour;
             guageBackground[i].style.backgroundColor=colourGuageFull; //Changes background of circle
             //guageBand[i].style.backgroundColor="#a30606";
             //guageBandOutOfBounds[i].style.backgroundColor="purple";
+            console.log(window.getComputedStyle(guageInners[i].firstChild).getPropertyValue("background-color"))
+            if (window.getComputedStyle(guageInners[i].firstChild).getPropertyValue("background-color") != red_color){
+              guageInners[i].firstChild.style.backgroundColor=colour;
+              guageInnersFull[i].firstChild.style.backgroundColor=colour;
+            }
         }
         });
     });

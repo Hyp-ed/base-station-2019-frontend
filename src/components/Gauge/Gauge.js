@@ -12,7 +12,7 @@ function Gauge(props) {
     if (rotateValue > 340) {
         rotateValue = 340;
     }
-   
+
     let textClassName = '';
     if (props.value < props.min || props.value > props.max) {
         textClassName = 'out-of-bounds';
@@ -66,7 +66,7 @@ function Gauge(props) {
 }
 
 Gauge.defaultProps = {
-    value: '130',
+    value: '12',
 }
 
 export {Gauge, circleClassName}
