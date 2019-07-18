@@ -2,6 +2,7 @@ import './Gauge.css';
 
 import React from 'react';
 let circleClassName = '';
+
 function Gauge(props) {
     let rotateValue = props.value < props.min
                       ? 0
@@ -14,9 +15,13 @@ function Gauge(props) {
     }
 
     let textClassName = '';
+    let circleClassName = '';
     if (props.value < props.min || props.value > props.max) {
+        // if (document.querySelector('input[type="checkbox"]').checked){ //if darkmode is enabled
+        // }
         textClassName = 'out-of-bounds';
         circleClassName = 'out-of-bounds';
+
     }
 
     const rotate = {
