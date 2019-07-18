@@ -1,9 +1,8 @@
 .button-container-root {
     display: flex;
-    justify-content: flex-end;
     grid-column: 1 / 4;
 }
 
 .button-container-button {
-    margin-left: 10px;
+    margin-right: 10px;
 }

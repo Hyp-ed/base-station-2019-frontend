@@ -24,8 +24,8 @@ h1, h2 {
 .wrapper {
     display: grid;
     grid-template-columns: 430px 380px auto;
-    grid-template-rows: 90px 190px 320px auto;
-    grid-gap: 25px 5px;
+    grid-template-rows: 90px 190px 410px auto;
+    grid-gap: 20px 5px;
     margin: auto;
 }
 
@@ -65,10 +65,14 @@ h1, h2 {
     display: flex;
     flex-wrap: wrap;
     grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    height: 290px;
 }
 
 #buttons {
     grid-column: 1 / 4;
+    grid-row: 3 / 4;
+    align-self: end;
 }
 
 /* lato-300 - latin */

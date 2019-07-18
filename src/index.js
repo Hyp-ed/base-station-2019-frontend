@@ -192,16 +192,6 @@ class App extends React.Component {
                     />
                 </div>
                 <div id="battery-flexbox">
-                    <HPBatteryBars
-                        title='HP BATTERY 1'
-                        values={highPowerBatteryValues[0]}
-                        ranges={highPowerBatteryRanges}
-                    />
-                    <HPBatteryBars
-                        title='HP BATTERY 2'
-                        values={highPowerBatteryValues[1]}
-                        ranges={highPowerBatteryRanges}
-                    />
                     <BatteryBars
                         title='LP BATTERY 1'
                         values={lowPowerBatteryValues[0]}
@@ -216,6 +206,16 @@ class App extends React.Component {
                         title='LP BATTERY 3'
                         values={lowPowerBatteryValues[2]}
                         ranges={lowPowerBatteryRanges}
+                    />
+                    <HPBatteryBars
+                        title='HP BATTERY 1'
+                        values={highPowerBatteryValues[0]}
+                        ranges={highPowerBatteryRanges}
+                    />
+                    <HPBatteryBars
+                        title='HP BATTERY 2'
+                        values={highPowerBatteryValues[1]}
+                        ranges={highPowerBatteryRanges}
                     />
                 </div>
                 <div id="indicators">
