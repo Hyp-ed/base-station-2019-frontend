@@ -1,7 +1,7 @@
 import './GaugeContainer.css';
 
 import React from 'react';
-import {Gauge} from '../Gauge/Gauge';
+import Gauge from '../Gauge/Gauge';
 
 function GaugeContainer(props) {
     const gauges = Array.from(props.gauges, gauge =>
