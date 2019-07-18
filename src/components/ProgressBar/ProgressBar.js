@@ -12,7 +12,10 @@ function ProgressBar(props) {
             <div className='progress-bar-fill fill-1'></div>
             <div className='progress-bar-fill fill-2'></div>
             <div className='progress-bar-background'></div>
-            <div className='progress-bar-indicator' style={indicatorStyle}></div>
+            <div className='progress-bar-indicator' style={indicatorStyle}>
+                <div className='arrow-up'></div>
+                <div className='progress-bar-value'>{props.podDistance.toFixed(1)}m</div>
+            </div>
         </div>
     );
 }

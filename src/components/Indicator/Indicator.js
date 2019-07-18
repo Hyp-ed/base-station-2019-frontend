@@ -11,7 +11,7 @@ function Indicator(props) {
     return (
         <div className='indicator-root'>
             <div className={`indicator-background ${backgroundClassName}`}></div>
-            <h2 className="indicator-name">{props.name}</h2>
+            <h2 className="indicator-name subtitle">{props.name}</h2>
         </div>
     );
 }
