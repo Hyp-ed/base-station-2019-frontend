@@ -20,6 +20,7 @@ function Switch(props){
         let colour;
         let colourGuageBackground;
         let colourGuageFull;
+        let colourGuageBar;
         checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
             document.documentElement.classList.toggle('light-mode');
@@ -33,6 +34,7 @@ function Switch(props){
             colour = "#0f1d3a"
             colourGuageBackground = "#ffffff"
             colourGuageFull = "#BABABA"
+            colourGuageBar = "#BABABA"
         } 
         else {
             document.documentElement.classList.remove('light-mode');
@@ -45,6 +47,7 @@ function Switch(props){
             colour = "#ffffff"
             colourGuageBackground = "#0f1d3a"
             colourGuageFull = "#3B414B"
+            colourGuageBar = "#ffffff"
           }
 
         //Change current mode above light/dark switch
@@ -64,7 +67,7 @@ function Switch(props){
         }
         //Change battery bar colours
         for(var j=0; j < batteryBars.length; j++){
-            batteryBars[j].style.backgroundColor=colourGuageFull;
+            batteryBars[j].style.backgroundColor=colourGuageBar;
         }
         });
     });
