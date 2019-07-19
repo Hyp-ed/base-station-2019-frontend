@@ -15,7 +15,7 @@ function VoltageTable(props) {
             let cells = []
 
             // Cell Number
-            cells.push(<td key={`${i}0`}>{`Cell ${i}`}</td>);
+            cells.push(<td key={`${i}0`}>{`Cell ${i + 1}`}</td>);
 
             // BMS 1
             let cellOneClassName = '';
