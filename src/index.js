@@ -10,6 +10,7 @@ import BatteryBars from './components/BatteryBars/BatteryBars';
 import HPBatteryBars from './components/HPBatteryBars/HPBatteryBars';
 import ButtonContainer from './components/ButtonContainer/ButtonContainer';
 import IndicatorContainer from './components/IndicatorContainer/IndicatorContainer';
+import VoltageTable from './components/VoltageTable/VoltageTable';
 
 class App extends React.Component {
     constructor(props) {
@@ -243,6 +244,11 @@ class App extends React.Component {
                         state={podState}
                     />
                 </div>
+                <VoltageTable
+                    bmsOne={highPowerBatteryValues[0]}
+                    bmsTwo={highPowerBatteryValues[1]}
+                    ranges={highPowerBatteryRanges}
+                />
             </div>
         );
     }

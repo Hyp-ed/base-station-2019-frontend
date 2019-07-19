@@ -1,0 +1,10 @@
+tr {
+    color: #ffffff;
+    font-size: 15px;
+    font-family: 'Lato';
+    font-weight: 300;
+}
+
+.bms.out-of-bounds {
+    color: #a30606;
+}
