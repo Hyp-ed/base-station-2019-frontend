@@ -15,6 +15,7 @@ function Switch(props){
         const barValueArrow = document.getElementsByClassName("arrow-up");
         const barValue = document.getElementsByClassName("progress-bar-value");
         const batteryBars = document.getElementsByClassName("bar fill ");
+        const batteryBarsBackground = document.getElementsByClassName("bar background ");
         const temperatureValue = document.getElementsByClassName("pod-temperature");
         let curMode;
         let colour;
@@ -59,7 +60,11 @@ function Switch(props){
         for(let i = 0; i < BatteryBarValues.length; ++i){
             BatteryBarValues[i].style.color=colour;
         }
-
+        //Change battery bar colours
+        for(var j=0; j < batteryBars.length; j++){
+            batteryBars[j].style.backgroundColor=colour;
+            batteryBarsBackground[j].style.backgroundColor=colourGuageFull;
+        }
         //Change Guage Colours
         for(var i = 0; i < gaugeValuesBackground.length; ++i){
             gaugeValuesBackground[i].style.backgroundColor=colourGuageBackground;
@@ -67,10 +72,7 @@ function Switch(props){
             guageInners[i].firstChild.style.backgroundColor=colour;
             guageInnersFull[i].firstChild.style.backgroundColor=colour;
         }
-        //Change battery bar colours
-        for(var j=0; j < batteryBars.length; j++){
-            batteryBars[j].style.backgroundColor=colourGuageBar;
-        }
+
         });
     });
 
