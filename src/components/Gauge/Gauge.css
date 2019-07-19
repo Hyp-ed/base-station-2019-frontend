@@ -30,10 +30,15 @@
 .circle {
     background-color: #ffffff;
     border-radius: 50%;
+    transition: all .2s ease;
+}
+
+.circle.white-mode{
+  background-color: #0f1d3a;
 }
 
 .circle.out-of-bounds {
-    background-color: #a30606;
+    background-color: #a30606!important;
 }
 
 .circle.danger-zone {
@@ -74,7 +79,7 @@
 }
 
 .gauge-text.out-of-bounds {
-    color: #a30606;
+    color: #a30606!important;
 }
 
 .gauge-text.value {

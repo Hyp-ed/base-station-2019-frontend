@@ -5,12 +5,20 @@
     grid-row: 1 / 2;
 }
 
-.pod-temperature {
+.timer {
+    color: #707070;
     font-size: 30px;
     font-family: 'Lato';
-    color: #ffffff;
-    text-align: center;
+    display: flex;
     margin-right: 20px;
+}
+
+.progress-bar {
+    flex-grow: 1; /* allow progress bar to grow and fill space */
+    background: #a30606;
+    height: 10px;
+    margin: 0px 40px 0px;
+    margin-right: 20px
 }
 
 .pod-status {
@@ -45,6 +53,17 @@
     margin-top: 5px;
 }
 
+.pod-temperature {
+    font-family: 'Lato';
+    font-weight: 300;
+    color: #ffffff;
+}
 #logo {
     width: 20%;
+}
+
+#logoDark{
+    position: absolute;
+    width: 15%;
+    visibility: hidden;
 }

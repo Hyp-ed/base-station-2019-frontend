@@ -2,9 +2,8 @@ body {
     background-color: #0f1d3a;
 }
 
-h1, h2 {
-    color: #ffffff;
-    margin: 0px;
+.light-mode body{
+    background-color: #ffffff;
 }
 
 .title {
@@ -70,9 +69,27 @@ h1, h2 {
 }
 
 #buttons {
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
+    display: flex;
+    grid-column: 2 / 4;
+    grid-row: 4 / 5;
+    justify-content: flex-end;
     align-self: end;
+}
+
+#swith-box{
+    color: white;
+}
+
+@media (min-width: 768px) {
+    #battery-flexbox {
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 1250px) {
+    #battery-flexbox {
+        justify-content: space-between;
+    }
 }
 
 /* lato-300 - latin */

@@ -20,6 +20,8 @@
     height: 23px;
 }
 
+
+
 .bar.container {
     position: relative;
     width: 180px;
@@ -37,7 +39,7 @@
 }
 
 .bar.fill.out-of-bounds {
-    background-color: #a30606;
+    background-color: #a30606!important;
 }
 
 .bar.value {
@@ -49,7 +51,10 @@
 }
 
 .bar-value-text {
-    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Lato';
+    font-weight: 300;
+    color: #707070;
     text-align: right;
     margin-bottom: 0px;
 }

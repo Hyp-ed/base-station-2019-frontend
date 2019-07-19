@@ -10,6 +10,7 @@ import BatteryBars from './components/BatteryBars/BatteryBars';
 import HPBatteryBars from './components/HPBatteryBars/HPBatteryBars';
 import ButtonContainer from './components/ButtonContainer/ButtonContainer';
 import IndicatorContainer from './components/IndicatorContainer/IndicatorContainer';
+import Switch from './components/Switch/Switch';
 
 class App extends React.Component {
     constructor(props) {
@@ -234,6 +235,11 @@ class App extends React.Component {
                     <IndicatorContainer
                         title='EMERGENCY BRAKES'
                         indicators={emBrakesIndicators}
+                    />
+                </div>
+                <div id="switch-box">
+                    <Switch
+                        title='DARK'
                     />
                 </div>
                 <div id="buttons">
