@@ -170,6 +170,9 @@ class App extends React.Component {
             : this.state.podData.batteries.lowPowerBatteries;
         const highPowerBatteryRanges = config["HPBatteryRanges"];
         const lowPowerBatteryRanges = config["LPBatteryRanges"];
+        const podTemperature = typeof this.state.podData === 'undefined'
+            ? '-'
+            : this.state.podData.temperature.temperature;
 
         return (
             <div className="wrapper">
@@ -178,6 +181,7 @@ class App extends React.Component {
                     podDistance={podDistance}
                     podState={podState}
                     progressBarMax={config['progressBarMax']}
+                    podTemperature={podTemperature}
                 />
                 <div id="gauges">
                     <div id="velocity-gauge">

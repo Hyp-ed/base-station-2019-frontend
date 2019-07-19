@@ -5,6 +5,14 @@
     grid-row: 1 / 2;
 }
 
+.pod-temperature {
+    font-size: 30px;
+    font-family: 'Lato';
+    color: #ffffff;
+    text-align: center;
+    margin-right: 20px;
+}
+
 .pod-status {
     display: flex;
     flex-direction: column;

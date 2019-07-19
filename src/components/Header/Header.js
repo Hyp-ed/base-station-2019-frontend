@@ -21,6 +21,7 @@ function Header(props) {
                 podState={props.podState}
                 connectedToPod={props.connectedToPod}
             />
+            <p className="pod-temperature">{`${props.podTemperature} \xB0C`}</p>
             <div className="pod-status">
                 <p className={`status-text connection-text ${connectionTextClassName}`} style={connectionTextStyle}>
                     {props.connectedToPod ? 'CONNECTED' : 'NOT CONNECTED'}
