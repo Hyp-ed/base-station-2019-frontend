@@ -14,6 +14,8 @@ function Switch(props){
         const guageBackground = document.getElementsByClassName("gauge-background");
         const barValueArrow = document.getElementsByClassName("arrow-up");
         const barValue = document.getElementsByClassName("progress-bar-value");
+        const batteryBars = document.getElementsByClassName("bar fill ");
+
         let curMode;
         let colour;
         let colourGuageBackground;
@@ -60,7 +62,10 @@ function Switch(props){
             guageInners[i].firstChild.style.backgroundColor=colour;
             guageInnersFull[i].firstChild.style.backgroundColor=colour;
         }
-
+        //Change battery bar colours
+        for(var j=0; j < batteryBars.length; j++){
+            batteryBars[j].style.backgroundColor=colourGuageFull;
+        }
         });
     });
 
