@@ -1,7 +1,7 @@
 import './Gauge.css';
 
 import React from 'react';
-let circleClassName = '';
+// let circleClassName = '';
 
 function Gauge(props) {
     let rotateValue = props.value < props.min
@@ -14,15 +14,15 @@ function Gauge(props) {
         rotateValue = 340;
     }
 
-    let textClassName = '';
-    let circleClassName = '';
+    var textClassName = '';
+    var circleClassName = '';
     if (props.value < props.min || props.value > props.max) {
-        // if (document.querySelector('input[type="checkbox"]').checked){ //if darkmode is enabled
-        // }
         textClassName = 'out-of-bounds';
         circleClassName = 'out-of-bounds';
 
     }
+
+    console.log(circleClassName, props.value)
 
     const rotate = {
         transform: `rotate(${rotateValue / 2}deg)`,

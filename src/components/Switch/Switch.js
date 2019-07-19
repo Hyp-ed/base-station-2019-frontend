@@ -16,6 +16,7 @@ function Switch(props){
         const barValueArrow = document.getElementsByClassName("arrow-up");
         const barValue = document.getElementsByClassName("progress-bar-value");
         const red_color = "rgb(163, 6, 6)";
+        const white_color = "rgb(0, 0, 0)";
         let curMode;
         let colour;
         let colourGuageBackground;
@@ -53,14 +54,14 @@ function Switch(props){
             BatteryBarValues[i].style.color=colour;
         }
         //Change Guage Colours
-        for(let i = 0; i < gaugeValuesBackground.length; ++i){
+
+        for(var i = 0; i < gaugeValuesBackground.length; ++i){
             gaugeValuesBackground[i].style.backgroundColor=colourGuageBackground;
             guageBackground[i].style.backgroundColor=colourGuageFull;
-            if (window.getComputedStyle(guageInners[i].firstChild).getPropertyValue("background-color") != red_color){
-              guageInners[i].firstChild.style.backgroundColor=colour;
-              guageInnersFull[i].firstChild.style.backgroundColor=colour;
-            }
+            guageInners[i].firstChild.style.backgroundColor=colour;
+            guageInnersFull[i].firstChild.style.backgroundColor=colour;
         }
+
         });
     });
     return(
