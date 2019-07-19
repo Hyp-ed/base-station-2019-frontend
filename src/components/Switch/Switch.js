@@ -22,6 +22,7 @@ function Switch(props){
         let colourGuageBackground;
         let colourGuageFull;
         let colourGuageBar;
+
         checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
             document.documentElement.classList.toggle('light-mode');
@@ -49,8 +50,7 @@ function Switch(props){
             colourGuageBackground = "#0f1d3a"
             colourGuageFull = "#3B414B"
             colourGuageBar = "#ffffff"
-          }
-
+        }
         //Change current mode above light/dark switch
         document.getElementById("curMode").innerHTML = curMode;
         for (let i = 0; i < temperatureValue.length; ++i){
@@ -72,7 +72,6 @@ function Switch(props){
             guageInners[i].firstChild.style.backgroundColor=colour;
             guageInnersFull[i].firstChild.style.backgroundColor=colour;
         }
-
         });
     });
 

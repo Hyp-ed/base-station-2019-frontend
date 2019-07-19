@@ -10,6 +10,7 @@ function Header(props) {
     const connectionTextClassName = props.connectedToPod ? 'connected' : 'not-connected';
     const connectionTextStyle = props.connectedToPod ? {marginBottom: -5} : {};
     const podStatusTextStyle = props.connectedToPod ? {} : {display: 'none'};
+    
     return (
         <div className="header">
                 <img id="logo" src={logo} alt="HypED logo"/>
