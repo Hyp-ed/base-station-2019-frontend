@@ -9,9 +9,9 @@ function Switch(props){
         const initHeader = document.getElementById('initHeader');
         const BatteryBarValues =  document.getElementsByClassName("bar-value-text");
         const gaugeValuesBackground = document.getElementsByClassName("inset");
-        const guageInners = document.getElementsByClassName("clip half");
-        const guageInnersFull = document.getElementsByClassName("clip full");
-        const guageBackground = document.getElementsByClassName("gauge-background");
+        const gaugeInners = document.getElementsByClassName("clip half");
+        const gaugeInnersFull = document.getElementsByClassName("clip full");
+        const gaugeBackground = document.getElementsByClassName("gauge-background");
         const barValueArrow = document.getElementsByClassName("arrow-up");
         const barValue = document.getElementsByClassName("progress-bar-value");
         const batteryBars = document.getElementsByClassName("bar fill ");
@@ -19,10 +19,9 @@ function Switch(props){
         const temperatureValue = document.getElementsByClassName("pod-temperature");
         let curMode;
         let colour;
-        let colourGuageBackground;
-        let colourGuageFull;
-        let colourGuageBar;
-
+        let colourGaugeBackground;
+        let colourGaugeFull;
+        let colourGaugeBar;
         checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
             document.documentElement.classList.toggle('light-mode');
@@ -34,9 +33,9 @@ function Switch(props){
             barValue[0].style.color='#707070';
             barValueArrow[0].style.borderBottom=' 0.2em solid #707070';
             colour = "#0f1d3a"
-            colourGuageBackground = "#ffffff"
-            colourGuageFull = "#BABABA"
-            colourGuageBar = "#BABABA"
+            colourGaugeBackground = "#ffffff"
+            colourGaugeFull = "#BABABA"
+            colourGaugeBar = "#BABABA"
         } 
         else {
             document.documentElement.classList.remove('light-mode');
@@ -47,9 +46,9 @@ function Switch(props){
             barValue[0].style.color='#ffffff';
             barValueArrow[0].style.borderBottom=' 0.2em solid #ffffff';
             colour = "#ffffff"
-            colourGuageBackground = "#0f1d3a"
-            colourGuageFull = "#3B414B"
-            colourGuageBar = "#ffffff"
+            colourGaugeBackground = "#0f1d3a"
+            colourGaugeFull = "#3B414B"
+            colourGaugeBar = "#ffffff"
         }
         //Change current mode above light/dark switch
         document.getElementById("curMode").innerHTML = curMode;
@@ -63,18 +62,17 @@ function Switch(props){
         //Change battery bar colours
         for(var j=0; j < batteryBars.length; j++){
             batteryBars[j].style.backgroundColor=colour;
-            batteryBarsBackground[j].style.backgroundColor=colourGuageFull;
+            batteryBarsBackground[j].style.backgroundColor=colourGaugeFull;
         }
-        //Change Guage Colours
+        //Change Gauge Colours
         for(var i = 0; i < gaugeValuesBackground.length; ++i){
-            gaugeValuesBackground[i].style.backgroundColor=colourGuageBackground;
-            guageBackground[i].style.backgroundColor=colourGuageFull;
-            guageInners[i].firstChild.style.backgroundColor=colour;
-            guageInnersFull[i].firstChild.style.backgroundColor=colour;
+            gaugeValuesBackground[i].style.backgroundColor=colourGaugeBackground;
+            gaugeBackground[i].style.backgroundColor=colourGaugeFull;
+            gaugeInners[i].firstChild.style.backgroundColor=colour;
+            gaugeInnersFull[i].firstChild.style.backgroundColor=colour;
         }
         });
     });
-
     return(
         <div id="swith-box">
             <h2 id="initHeader" style={{color:"#ffffff"}}>DARK MODE</h2>
