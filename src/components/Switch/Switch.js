@@ -15,7 +15,7 @@ function Switch(props){
         const barValueArrow = document.getElementsByClassName("arrow-up");
         const barValue = document.getElementsByClassName("progress-bar-value");
         const batteryBars = document.getElementsByClassName("bar fill ");
-
+        const temperatureValue = document.getElementsByClassName("pod-temperature");
         let curMode;
         let colour;
         let colourGuageBackground;
@@ -52,7 +52,9 @@ function Switch(props){
 
         //Change current mode above light/dark switch
         document.getElementById("curMode").innerHTML = curMode;
-
+        for (let i = 0; i < temperatureValue.length; ++i){
+            temperatureValue[i].style.color=colour;
+        }
         //Change Battery Colours
         for(let i = 0; i < BatteryBarValues.length; ++i){
             BatteryBarValues[i].style.color=colour;

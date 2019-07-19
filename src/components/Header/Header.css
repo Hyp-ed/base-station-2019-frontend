@@ -53,6 +53,11 @@
     margin-top: 5px;
 }
 
+.pod-temperature {
+    font-family: 'Lato';
+    font-weight: 300;
+    color: #ffffff;
+}
 #logo {
     width: 20%;
 }
