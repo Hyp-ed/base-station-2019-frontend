@@ -69,8 +69,10 @@ body {
 }
 
 #buttons {
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
+    display: flex;
+    grid-column: 2 / 4;
+    grid-row: 4 / 5;
+    justify-content: flex-end;
     align-self: end;
 }
 
