@@ -1,7 +1,6 @@
 import './Switch.css';
 import React from 'react';
 
-
 function Switch(props){
     document.addEventListener('DOMContentLoaded', function () {
         const checkbox = document.querySelector('input[type="checkbox"]');
@@ -15,13 +14,10 @@ function Switch(props){
         const guageBackground = document.getElementsByClassName("gauge-background");
         const barValueArrow = document.getElementsByClassName("arrow-up");
         const barValue = document.getElementsByClassName("progress-bar-value");
-        const red_color = "rgb(163, 6, 6)";
-        const white_color = "rgb(0, 0, 0)";
         let curMode;
         let colour;
         let colourGuageBackground;
         let colourGuageFull;
-
         checkbox.addEventListener('change', function () {
         if (checkbox.checked) {
             document.documentElement.classList.toggle('light-mode');
@@ -35,7 +31,8 @@ function Switch(props){
             colour = "#0f1d3a"
             colourGuageBackground = "#ffffff"
             colourGuageFull = "#BABABA"
-        } else {
+        } 
+        else {
             document.documentElement.classList.remove('light-mode');
             logoDark.style.visibility = 'hidden';
             logoLight.style.visibility = 'visible';
@@ -47,14 +44,16 @@ function Switch(props){
             colourGuageBackground = "#0f1d3a"
             colourGuageFull = "#3B414B"
           }
+
         //Change current mode above light/dark switch
         document.getElementById("curMode").innerHTML = curMode;
+
         //Change Battery Colours
         for(let i = 0; i < BatteryBarValues.length; ++i){
             BatteryBarValues[i].style.color=colour;
         }
-        //Change Guage Colours
 
+        //Change Guage Colours
         for(var i = 0; i < gaugeValuesBackground.length; ++i){
             gaugeValuesBackground[i].style.backgroundColor=colourGuageBackground;
             guageBackground[i].style.backgroundColor=colourGuageFull;
@@ -64,6 +63,7 @@ function Switch(props){
 
         });
     });
+
     return(
         <div id="swith-box">
             <h2 id="initHeader" style={{color:"#ffffff"}}>DARK MODE</h2>
