@@ -2,8 +2,14 @@ import './ButtonContainer.css';
 
 import React from 'react';
 import Button from '../Button/Button';
+import BrakeButton from '../BrakeButton/BrakeButton';
 
 class ButtonContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.sendMessage = this.sendMessage.bind(this);
+    }
+
     sendMessage(msg) {
         const stompClient = this.props.stompClient;
 
@@ -58,17 +64,10 @@ class ButtonContainer extends React.Component {
                     />
                 </div>
                 <div className="button-container-button">
-                    <Button
-                        name='BRAKE'
+                    <BrakeButton
+                        brakes={this.props.brakes}
                         disabled={disabledButtons.brake}
-                        handleClick={() => this.sendMessage({command: 'NOMINAL_BRAKING'})}
-                    />
-                </div>
-                <div className="button-container-button">
-                    <Button
-                        name='RETRACT'
-                        disabled={disabledButtons.brake}
-                        handleClick={() => this.sendMessage({command: 'NOMINAL_RETRACT'})}
+                        clickHandler={this.sendMessage}
                     />
                 </div>
                 <div className="button-container-button">
@@ -145,7 +144,7 @@ function determineDisabledButtons(state) {
                 calibrate: true,
                 reset: false,
                 launch: true,
-                brake: true,
+                brake: false,
                 stop: true,
             };
         case 'EMERGENCY_BRAKING':

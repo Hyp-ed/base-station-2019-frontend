@@ -163,6 +163,9 @@ class App extends React.Component {
         const emBrakesIndicators = typeof this.state.podData === 'undefined'
             ? config['emBrakesIndicators']
             : this.getIndicators(config['emBrakesIndicators'], this.convertEmBrakesStatuses(this.state.podData.emergencyBrakes.brakes));
+        const brakesBools = typeof this.state.podData === 'undefined'
+            ? []
+            : this.state.podData.emergencyBrakes.brakes;
         const highPowerBatteryValues = typeof this.state.podData === 'undefined'
             ? {}
             : this.state.podData.batteries.highPowerBatteries;
@@ -242,6 +245,7 @@ class App extends React.Component {
                         stompClient={stompClient}
                         connectedToPod={connectedToPod}
                         state={podState}
+                        brakes={brakesBools}
                     />
                 </div>
                 <VoltageTable
