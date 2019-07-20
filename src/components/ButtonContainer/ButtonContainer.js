@@ -66,6 +66,13 @@ class ButtonContainer extends React.Component {
                 </div>
                 <div className="button-container-button">
                     <Button
+                        name='RETRACT'
+                        disabled={disabledButtons.brake}
+                        handleClick={() => this.sendMessage({command: 'NOMINAL_RETRACT'})}
+                    />
+                </div>
+                <div className="button-container-button">
+                    <Button
                         name='STOP'
                         disabled={disabledButtons.stop}
                         handleClick={() => this.sendMessage({command: 'STOP'})}
