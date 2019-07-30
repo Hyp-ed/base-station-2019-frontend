@@ -6,3 +6,7 @@ There is no need to 'run' the frontend, it is already packaged together in a jar
 
 ### How to build/develop
 Clone the repo and run `yarn start`. Go to `localhost:3000` to see a development build, update the files in the repo and you should see an instantaneous change.
+
+<br>
+
+![screenshot](https://i.imgur.com/BrU8SX7.jpg)
