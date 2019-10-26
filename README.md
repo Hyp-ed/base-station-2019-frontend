@@ -33,8 +33,7 @@ $ sudo npm install yarn -g
 Note: do not use `sudo apt-get install yarn`. This will install a different package with the same name. 
 
 ### Running the development server
-
-After installing node and npm, we will need to install ```yarn```. After a successful install you should be able to start the dev server, and a browser window should open. 
+After a successful install you should be able to start the dev server, and a browser window should open. 
 
 ```
 $ yarn start
