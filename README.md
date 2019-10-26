@@ -4,8 +4,53 @@ This repo holds all the code responsible for the frontend of the HYPED base-stat
 ### How to run
 There is no need to 'run' the frontend, it is already packaged together in a jar file with the backend. Download the latest release [here](https://github.com/Hyp-ed/base-station-2019/releases) and follow the instructions [here](https://github.com/Hyp-ed/base-station-2019/blob/master/README.md).
 
-### How to build/develop
-Clone the repo and run `yarn start`. Go to `localhost:3000` to see a development build, update the files in the repo and you should see an instantaneous change.
+# Running a development version of the base-station
+
+The base-station is made up of a Java backend and a React App (Javascript) frontend. In the release version of the backend, the backend and frontend are packaged together into one .jar file. However, if you'd like to setup a development server of the React App in order to work on the project, there are a few things to configure. 
+
+### Cloning the frontend repo
+
+There is a link to a repo within the [base-station hyped github repository](https://github.com/Hyp-ed/base-station-2019) named ```base-station-20xx-frontend```. This is a sub-repository that is used for the frontend, and contains the code for the React App we will be working on. Clone this repository and navigate to its directory in terminal to get started.
+
+### Installing dependencies
+
+This section requires ```brew``` installed on your computer. (If you don't have `brew` set up, click [here](https://brew.sh/) for more info) In order for the React App to run we need to install some dependent libraries. In the directory containing the frontend repo, run:
+
+```
+$ brew install node
+$ brew install npm
+```
+or on linux:
+```
+$ sudo apt-get install node
+$ sudo apt-get install npm
+```
+After installing node and npm:
+```
+$ sudo npm install yarn -g
+```
+
+Note: do not use `sudo apt-get install yarn`. This will install a different package with the same name. 
+
+### Running the development server
+
+After installing node and npm, we will need to install ```yarn```. After a successful install you should be able to start the dev server, and a browser window should open. 
+
+```
+$ yarn start
+```
+
+### Testing changes
+
+Once the server is running any changes you make to the source code will automatically update the GUI in your browser. 
+
+If you'd like to test your changes with a simulated pod run, you can use [this guide](https://github.com/Hyp-ed/base-station-2019/blob/master/README.md) to run the latest release backend, which will serve the state of the pod to your development frontend GUI as well as the release GUI (in general the dev server frontend GUI will be accessible at `localhost:3000` and the release GUI will be at `localhost:8080`, when they are running). Once the backend and the development frontend is also running, you can use 
+```
+$ ./hyped <flags>
+``` 
+in the standard hyped repo directory on the same computer. Use ```./hyped --f``` to see which `<flags>` are available. The hyped executable should connect to the backend, and the backend should serve the state of the executable to both frontend windows. To confirm this, check that the pod-state displays "CONNECTED"
+
+
 
 <br>
 
